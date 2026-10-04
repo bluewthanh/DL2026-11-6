@@ -1,0 +1,10 @@
+# Dataset exports and local audit (do not commit images or annotations)
+data/
+# Secrets and downloaded model artifacts
+.env
+*.pt
+*.pth
+*.safetensors
+__pycache__/
+*.part
+weights/
