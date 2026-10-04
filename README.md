@@ -11,7 +11,7 @@
 | No. | Member name | Student ID |
 |---:|---|---|
 | 1 | Lê Thanh Thảo | 23BA14265 |
-| 2 | _To be filled in_ | _To be filled in_ |
+| 2 | Chu Ngọc Minh Khôi | 2410478 |
 | 3 | _To be filled in_ | _To be filled in_ |
 | 4 | _To be filled in_ | _To be filled in_ |
 | 5 | _To be filled in_ | _To be filled in_ |
