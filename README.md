@@ -4,13 +4,13 @@
 
 | Item | Details |
 |---|---|
-| Group ID | _To be filled in_ |
+| Group ID | 11 |
 | Project ID | 6 |
 | Topic | Open-Vocabulary Object Detection with Text Prompts |
 
 | No. | Member name | Student ID |
 |---:|---|---|
-| 1 | _To be filled in_ | _To be filled in_ |
+| 1 | Lê Thanh Thảo | 23BA14265 |
 | 2 | _To be filled in_ | _To be filled in_ |
 | 3 | _To be filled in_ | _To be filled in_ |
 | 4 | _To be filled in_ | _To be filled in_ |
