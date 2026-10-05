@@ -14,7 +14,7 @@
 | 2 | Chu Ngọc Minh Khôi | 2410478 |
 | 3 | Nguyễn Đình Huy | 23BA14140 |
 | 4 | _To be filled in_ | _To be filled in_ |
-| 5 | _To be filled in_ | _To be filled in_ |
+| 5 | Lê Minh | 23BA14194 |
 | 6 | Nguyễn Quang Minh | 23BA14195 |
 | 7 | _To be filled in_ | _To be filled in_ |
 
