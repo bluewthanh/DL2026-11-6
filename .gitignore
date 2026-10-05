@@ -9,3 +9,6 @@ __pycache__/
 *.part
 weights/
 results/
+
+/aquarium.v2-release.yolov8/
+*.crdownload
