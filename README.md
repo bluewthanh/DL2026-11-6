@@ -15,7 +15,7 @@
 | 3 | Nguyễn Đình Huy | 23BA14140 |
 | 4 | _To be filled in_ | _To be filled in_ |
 | 5 | _To be filled in_ | _To be filled in_ |
-| 6 | _To be filled in_ | _To be filled in_ |
+| 6 | Nguyễn Quang Minh | 23BA14195 |
 | 7 | _To be filled in_ | _To be filled in_ |
 
 Course project (Project 6): evaluate text-prompted detectors on the Roboflow 100 Aquarium v2 dataset. **Current status:** dataset audit and derived COCO validation are complete; a **pretrained YOLOE-26s** bare-name baseline has run on the original **validation** split. This is an in-progress project, not a final multi-model comparison. No fine-tuning or test-set inference has been done.
