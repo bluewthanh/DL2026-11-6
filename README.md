@@ -12,7 +12,7 @@
 |---:|---|---|
 | 1 | Lê Thanh Thảo | 23BA14265 |
 | 2 | Chu Ngọc Minh Khôi | 2410478 |
-| 3 | _To be filled in_ | _To be filled in_ |
+| 3 | Nguyễn Đình Huy | 23BA14140 |
 | 4 | _To be filled in_ | _To be filled in_ |
 | 5 | _To be filled in_ | _To be filled in_ |
 | 6 | _To be filled in_ | _To be filled in_ |
