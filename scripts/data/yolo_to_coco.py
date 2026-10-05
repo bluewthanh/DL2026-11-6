@@ -53,8 +53,7 @@ def convert(source: Path, destination: Path, policy: str) -> dict:
     outputs = {}
     categories = [{"id": int(i) + 1, "name": name, "supercategory": "object"}
                   for i, name in audit["id_to_name"].items()]
-    # Build every split in memory before writing anything. COCO IDs are 1-based;
-    # explicit mapping avoids relying on the prompt-table order or Python sorting.
+    # Build every split before writing anything. COCO category ID = YOLO class ID + 1.
     for split, expected in EXPECTED_COUNTS.items():
         directory = audit["splits"][split].get("directory", split)
         images_dir = source / directory / "images"

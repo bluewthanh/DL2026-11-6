@@ -1,0 +1,3 @@
+# Owner: <teammate name>
+name: yolov10n
+weights: yolov10n.pt  # COCO-pretrained, downloaded to weights/

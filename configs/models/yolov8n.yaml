@@ -1,0 +1,3 @@
+# Owner: <your name>
+name: yolov8n
+weights: yolov8n.pt  # COCO-pretrained, downloaded to weights/

@@ -1,7 +1,7 @@
 """Overlay ground truth (green) and YOLOE predictions (red) on a few validation images.
 
 Example (adjust the paths to match your repo):
-  python scripts/visualize_val.py \
+  python scripts/open_vocab/visualize_val.py \
       --images-dir data/aquarium-qlnqy-v2-yolov8/valid/images \
       --gt data/aquarium-v2-coco/<coco_val_file>.json \
       --pred results/yoloe26s_valid_bare_moi/predictions.json \
@@ -13,7 +13,7 @@ import os
 import random
 
 import matplotlib
-matplotlib.use("Agg")  # no display needed
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from PIL import Image
@@ -37,11 +37,10 @@ def main():
     cat_name = {c["id"]: c["name"] for c in gt["categories"]}
     images = {im["id"]: im for im in gt["images"]}
 
-    # Print the class names so you can check them
     print("Classes:", cat_name)
 
     random.seed(args.seed)
-    # Only pick images that have predictions (useful when the run used --limit)
+    # Runs made with --limit only have predictions for some images.
     pred_ids = {p["image_id"] for p in preds}
     pool = [i for i in images if i in pred_ids] or list(images)
     chosen = random.sample(pool, min(args.n, len(pool)))
@@ -50,7 +49,6 @@ def main():
         info = images[img_id]
         path = os.path.join(args.images_dir, info["file_name"])
         img = Image.open(path)
-        # Check that the real image size matches the COCO metadata
         if img.size != (info["width"], info["height"]):
             print(f"[WARNING] {info['file_name']}: image {img.size} != COCO {(info['width'], info['height'])}")
 

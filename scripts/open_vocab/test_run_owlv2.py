@@ -1,6 +1,6 @@
 """Dependency-free checks for OWLv2 COCO mapping and validation-only CLI guards.
 
-Run from repository root: python -m unittest discover -s scripts -p 'test_run_owlv2.py'
+Run from repository root: python -m unittest discover -s scripts/open_vocab -p 'test_run_owlv2.py'
 """
 
 import sys
@@ -10,8 +10,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-# The production module imports validate_coco, which needs pycocotools; use its
-# verified class mapping without requiring an entire ML environment for unit tests.
+# validate_coco is in scripts/data/.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
+
+# Stub validate_coco when pycocotools is not installed.
 try:
     from validate_coco import CATEGORIES
 except ModuleNotFoundError as exc:

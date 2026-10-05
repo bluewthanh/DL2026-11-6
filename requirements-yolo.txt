@@ -1,0 +1,9 @@
+# Versions used for the recorded YOLO benchmark runs. Everyone must use the same ultralytics version.
+torch==2.14.1
+torchvision==0.29.1
+ultralytics==8.4.173
+pycocotools==2.0.11
+PyYAML==6.0.3
+Pillow==12.3.0
+numpy==2.5.3
+opencv-python==5.0.0.93

@@ -1,7 +1,7 @@
 """Pretrained YOLOE-26s text-prompted Aquarium COCO validation baseline.
 
 Requires ultralytics==8.4.172, pycocotools, torch, and Ultralytics/CLIP.
-See EXPERIMENTS.md for installation, checkpoint and text encoder sources.
+See docs/open_vocab/YOLOE.md for installation, checkpoint and text encoder sources.
 """
 
 import argparse
@@ -20,6 +20,8 @@ from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from ultralytics import YOLOE
 
+# validate_coco is in scripts/data/.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
 from validate_coco import CATEGORIES, validate
 
 
@@ -141,12 +143,11 @@ def main():
         raise RuntimeError(
             "Checkpoint is not the expected YOLOE-26s MobileCLIP2 text-prompt model")
     model.to(args.device)
-    # Check the Ultralytics weights directory so an absent encoder cannot silently
-    # trigger a download during the baseline run.
+    # Fail instead of letting Ultralytics silently download the encoder.
     from ultralytics.utils import WEIGHTS_DIR
     encoder = WEIGHTS_DIR / "mobileclip2_b.ts"
     if not encoder.is_file():
-        raise FileNotFoundError(f"{encoder} missing; see EXPERIMENTS.md")
+        raise FileNotFoundError(f"{encoder} missing; see docs/open_vocab/YOLOE.md")
     model.set_classes(prompts)
     if [model.names[i] for i in range(len(prompts))] != prompts:
         raise RuntimeError("YOLOE prompt-index mapping mismatch")
