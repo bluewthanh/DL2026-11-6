@@ -1,15 +1,19 @@
-# Project plan: Aquarium v2 closed-set YOLO benchmark
+# Project plan: Aquarium v2 text-prompted detection and YOLO controls
 
-This document describes the **current repository scope**, based on the benchmark added in commit `a63463c`. The original course topic was open-vocabulary detection with text prompts; YOLOv8n, YOLO11n and YOLOv10n are **closed-set supervised detectors**, not substitutes for a prompt study. Confirm with the teaching staff whether a change of project scope meets the course requirements before submitting. Do not claim that text-prompt experiments were conducted by this benchmark.
+The lecturer's **open-vocabulary** topic is the primary goal. The closed-set benchmark added in commit `a63463c` is a supplementary comparison, **not** the answer to the topic on its own. Do not present YOLOv8n, YOLO11n or YOLOv10n as text-promptable detectors.
 
 ## Topic requirements (course brief)
 
 - Detect objects using text descriptions instead of relying only on a fixed set of predefined classes.
 - Investigate how different object names, synonyms, and descriptive prompts affect detection performance.
 
-**Status:** The current three-model closed-set YOLO benchmark does not satisfy either requirement by itself: its predictions use fixed trained classes, and it does not accept or compare inference-time text prompts. How to address this gap is still to be discussed; no prompt-based results are claimed here.
+## Primary experiment: text prompts
 
-## Objective and status
+Use pretrained **YOLOE-26s** (`scripts/open_vocab/run_yoloe_baseline.py`) with its text encoder at inference time. `set_classes(prompts)` turns a supplied vocabulary into detections without fine-tuning on Aquarium; see [the model and prompt-study documentation](docs/open_vocab/YOLOE.md). Compare the versioned [bare names, synonym variant and visual descriptions](scripts/open_vocab/aquarium_prompts.json) on the **same 127 validation images**, with the same seven COCO category IDs and the same image size, confidence cutoff and evaluator. Save each run's prompts, predictions, per-class AP, overall AP and environment separately. Only two categories have reliable alternative names (`jellyfish` → `sea jelly`, `starfish` → `sea star`); five remain unchanged in the synonym set. This is **not** a seven-class synonym-effect estimate. Descriptions change all seven prompts.
+
+Recorded results in `docs/open_vocab/YOLOE.md`: a full CPU validation comparison (bare AP **0.13109**, synonym AP **0.12771**, description AP **0.05759**) and a previously documented GPU prompt study (0.1313 / 0.1278 / 0.0576). CPU `results/` files exist locally but are ignored by Git; historical GPU artifacts are unavailable here. Independently reproduce and inspect saved predictions before submitting; see that document for commands and per-class effects. These results are **validation-only**; do not claim a prompt-based test result. Prompt flexibility does not by itself prove successful detection of categories absent from pretraining.
+
+## Supplementary objective and status
 
 Fine-tune three COCO-pretrained nano models on the *same* RF100 Aquarium v2 training split, then compare validation/test accuracy, model size and batch-1 inference latency under a shared protocol:
 
@@ -19,7 +23,7 @@ Fine-tune three COCO-pretrained nano models on the *same* RF100 Aquarium v2 trai
 | YOLO11n | `configs/models/yolo11n.yaml` | One-epoch smoke pipeline passed; full run pending |
 | YOLOv10n | `configs/models/yolov10n.yaml` | One-epoch smoke pipeline passed; full run pending |
 
-The [generated leaderboard](reports/benchmark.md) currently contains **only YOLOv8n**. There is no three-model ranking yet. Each model is initialized from its own COCO-pretrained checkpoint and fine-tuned on Aquarium training labels. Predictions are restricted to the dataset's seven learned classes; no inference-time text prompts or zero-shot claims apply.
+The [closed-set leaderboard](reports/benchmark.md) currently contains **only YOLOv8n**. There is no three-model ranking yet. Each model is initialized from its own COCO-pretrained checkpoint and fine-tuned on Aquarium training labels. Predictions are restricted to the dataset's seven learned classes; no inference-time text prompts or zero-shot claims apply. The YOLOE validation-only zero-shot results and fine-tuned YOLO test scores are **not a fair head-to-head ranking**: splits and training regimes differ.
 
 ## Dataset and reproducibility
 
@@ -46,7 +50,7 @@ Benchmark size, GFLOPs and FP32/FP16 latency with warmed-up, in-memory, batch-1 
 
 ## Remaining work and reporting
 
-1. Confirm the change from the original text-prompted course topic with staff and confirm submission format, group roster and deadlines.
-2. Finish YOLO11n and YOLOv10n full runs; commit only their run summaries and regenerate the leaderboard. Do not fabricate pending measurements.
-3. Check protocol hashes, dataset policy, latency hardware and visual/metric sanity checks before interpreting a three-model comparison.
-4. Report test-label limitations and the one-seed/single-dataset limitation. Include reproducible commands, actual measured results, per-class analysis and a truthful Member Contribution table in any submission.
+1. Independently rerun and verify the YOLOE name/synonym/description study (generated artifacts are ignored and historical GPU artifacts are unavailable here); inspect overlays and document errors and per-class effects. Never tune prompts on test.
+2. If a held-out open-vocabulary test result is required, freeze prompts and evaluation settings on validation **first**, then implement/document an explicitly reviewed test protocol. The current YOLOE script intentionally refuses test inference.
+3. Finish YOLO11n and YOLOv10n full runs if time/resources allow; commit only their summaries and regenerate the supplementary leaderboard. Do not fabricate pending measurements or imply supervised test AP is directly comparable to zero-shot validation AP.
+4. Confirm report format, roster and deadlines with staff. Include reproducible commands, limitations (one dataset, two real synonyms, test-label defects, different training regimes), measured results and a truthful Member Contribution table.

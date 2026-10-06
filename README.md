@@ -1,4 +1,4 @@
-# Aquarium v2: closed-set YOLO benchmark
+# Aquarium v2: text-prompted object detection and YOLO benchmark
 
 ## Group information
 
@@ -6,7 +6,7 @@
 |---|---|
 | Group ID | 11 |
 | Project ID | 6 |
-| Assigned course topic (confirm scope change with staff) | Open-Vocabulary Object Detection with Text Prompts |
+| Assigned course topic | Open-Vocabulary Object Detection with Text Prompts |
 
 | No. | Member name | Student ID |
 |---:|---|---|
@@ -18,9 +18,9 @@
 | 6 | Nguyễn Quang Minh | 23BA14195 |
 | 7 | _To be filled in_ | _To be filled in_ |
 
-**Scope:** compare three COCO-pretrained, **closed-set** nano detectors fine-tuned on Roboflow 100 Aquarium v2: **YOLOv8n, YOLO11n and YOLOv10n**. These models do not accept arbitrary text prompts. This scope differs from the assigned open-vocabulary topic; obtain course-staff approval before presenting it as the Project 6 submission. See [PROJECT_GUIDE.md](PROJECT_GUIDE.md) for the revised plan and [DATA.md](DATA.md) for the dataset and annotation policy.
+**Lecturer's requirements:** detect objects using text descriptions rather than only fixed classes, and measure how object names, synonyms and descriptive prompts affect performance. The primary experiment uses text-prompted **YOLOE-26s** on Roboflow 100 Aquarium v2; [PROJECT_GUIDE.md](PROJECT_GUIDE.md) maps each requirement to the pipeline. **YOLOv8n, YOLO11n and YOLOv10n are supplementary, supervised closed-set controls**, not text-prompted models. See [DATA.md](DATA.md) for the dataset and annotation policy.
 
-**Recorded status:** YOLOv8n completed a 100-epoch, seed-0 run, including validation, held-out test and batch-1 GPU benchmarking ([results](docs/yolo/YOLOV8N.md), [summary](reports/runs/yolov8n_e100_s0.json)). YOLO11n and YOLOv10n completed one-epoch pipeline smoke tests; full runs and their results are still pending. Do not report smoke-test metrics as full results.
+**Recorded status:** a pretrained YOLOE-26s bare-name validation baseline and a GPU validation prompt study (name/synonym/description) are documented in [YOLOE.md](docs/open_vocab/YOLOE.md). A full CPU bare/synonym/description comparison has also been run locally; generated `results/` artifacts are ignored by Git, so independent reproduction is still needed before submission. There is no reported prompt-based test evaluation. YOLOv8n completed a 100-epoch, seed-0 supervised run ([results](docs/yolo/YOLOV8N.md)); YOLO11n and YOLOv10n have only one-epoch smoke tests. Do not compare supervised test AP against zero-shot validation AP as if they shared a protocol.
 
 ## Repository layout
 
@@ -30,16 +30,32 @@ DL2026-11-6/
 ├── aquadet/                  prepare, train, evaluate, benchmark, compare CLI
 ├── configs/base.yaml         shared protocol
 ├── configs/models/           yolov8n.yaml, yolo11n.yaml, yolov10n.yaml
-├── docs/yolo/                benchmark instructions and per-model results
+├── docs/open_vocab/          YOLOE prompt study and recorded validation results
+├── docs/yolo/                supplementary benchmark instructions and results
+├── scripts/open_vocab/       text-prompted YOLOE runner and versioned prompts
 ├── scripts/data/             source audit and derived COCO conversion/validation
 ├── reports/                  committed run summaries and leaderboard
-├── tests/                    aquadet unit tests
+├── tests/                    benchmark and prompt-definition unit tests
 └── requirements-yolo.txt     pinned benchmark dependencies
 ```
 
-`dataset/` (original export), `data/` (derived views), `weights/`, `runs/` and `.venv/` are local/ignored. Do not commit images, labels, credentials or downloaded weights. Run all commands from the repository root.
+`dataset/` (benchmark source), `data/` (local export and derived views), `weights/`, `runs/`, `results/` and `.venv/` are local/ignored. Do not commit images, labels, credentials or downloaded weights. Run all commands from the repository root.
 
-## Install and run
+## Primary experiment: names, synonyms and descriptions
+
+Reproduce the [YOLOE-26s prompt study](docs/open_vocab/YOLOE.md) using its separately documented environment (`ultralytics==8.4.172`, `pycocotools==2.0.11`, and the pinned Ultralytics/CLIP dependency). Download the trusted text-promptable checkpoint and MobileCLIP2 text encoder as described there; do not use the `-pf` checkpoint. The **YOLO benchmark environment below uses a different Ultralytics version** and should be kept separate. The seven prompt strings in each set are versioned in [`aquarium_prompts.json`](scripts/open_vocab/aquarium_prompts.json). Only jellyfish and starfish change in the synonym variant.
+
+With the original export at `data/aquarium.v2-release.yolov8/` and derived `data/aquarium-v2-coco/valid.json` ready (see [DATA.md](DATA.md)), run from the repository root in the YOLOE environment:
+
+```bash
+python scripts/open_vocab/run_yoloe_baseline.py --source data/aquarium.v2-release.yolov8 --prompt-set bare --output results/yoloe_valid_bare_rerun
+python scripts/open_vocab/run_yoloe_baseline.py --source data/aquarium.v2-release.yolov8 --prompt-set synonym --output results/yoloe_valid_synonym_rerun
+python scripts/open_vocab/run_yoloe_baseline.py --source data/aquarium.v2-release.yolov8 --prompt-set description --output results/yoloe_valid_description_rerun
+```
+
+Use `--device cuda:0` for the GPU setup documented in [YOLOE.md](docs/open_vocab/YOLOE.md). Each run records its exact prompts, predicted boxes, per-class and overall COCO AP, and runtime in a **new** ignored output directory. All three sets use the same validation images and ground truth. The locally measured full-validation CPU study reports overall AP **0.13109 / 0.12771 / 0.05759** for bare/synonym/description respectively; per-class effects and the separately documented historical GPU study are in [YOLOE.md](docs/open_vocab/YOLOE.md). Generated artifacts are ignored by Git; rerun and verify before submission. The script refuses test evaluation to prevent accidental test tuning.
+
+## Supplementary closed-set YOLO benchmark
 
 Python 3.12 is recommended. With `uv`:
 
@@ -51,7 +67,7 @@ python -m aquadet env
 python -m unittest discover -s tests
 ```
 
-For the full setup, supported overrides, hardware/latency rules and evaluation protocol, read [docs/yolo/README.md](docs/yolo/README.md). If you do not use `uv`, create a Python 3.12 venv, install the appropriate PyTorch build for your hardware and then `pip install -r requirements-yolo.txt`.
+For the full **closed-set** setup, supported overrides, hardware/latency rules and evaluation protocol, read [docs/yolo/README.md](docs/yolo/README.md). If you do not use `uv`, create a Python 3.12 venv, install the appropriate PyTorch build for your hardware and then `pip install -r requirements-yolo.txt`.
 
 1. Obtain the unmodified [Roboflow 100 Aquarium v2 YOLOv8-format **annotation export**](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8) and put its `data.yaml`, `train/`, `valid/` and `test/` at `dataset/aquarium.v2-release.yolov8/` (or pass `--source PATH` / set `AQUADET_SOURCE`). The YOLOv8 **export format** is not a restriction on which of the three detectors can be trained. The published 448/127/63 image splits are preserved.
 2. Prepare derived data, then run a smoke test before committing to a full run:

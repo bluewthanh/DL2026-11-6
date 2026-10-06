@@ -1,0 +1,23 @@
+{
+  "category_id_to_name": {
+    "1": "fish",
+    "2": "jellyfish",
+    "3": "penguin",
+    "4": "puffin",
+    "5": "shark",
+    "6": "starfish",
+    "7": "stingray"
+  },
+  "bare": ["fish", "jellyfish", "penguin", "puffin", "shark", "starfish", "stingray"],
+  "synonym_variant": ["fish", "sea jelly", "penguin", "puffin", "shark", "sea star", "stingray"],
+  "changed_only": {"2": ["jellyfish", "sea jelly"], "6": ["starfish", "sea star"]},
+  "descriptions": [
+    "swimming animal with fins and a tail",
+    "translucent sea animal with a bell and trailing tentacles",
+    "black-and-white swimming bird with flippers",
+    "seabird with a large colorful beak",
+    "large fish with a dorsal fin and pointed snout",
+    "star-shaped sea animal with radiating arms",
+    "flat sea animal with broad wing-like fins and a long tail"
+  ]
+}

@@ -19,9 +19,11 @@
 
 These are the splits of the published version 2; **do not re-split or use the test split for model selection or threshold tuning**. Roboflow lists the split as approximately 70% / 20% / 10%. The [RF100 benchmark's dataset statistics](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/datasets_stats.csv) independently list 448 train, 127 valid, 63 test, 638 total and 7 classes for `aquarium-qlnqy`.
 
-## Classes
+## Classes and text-prompt study
 
-The seven classes in the [RF100 benchmark metadata](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/labels_names.json) are **fish, jellyfish, penguin, puffin, shark, starfish, stingray**. The export's YOLO IDs are 0–6 in that order; derived COCO IDs are 1–7. All three closed-set detectors train and evaluate on this same mapping. See the audited export mapping below.
+The open-vocabulary experiment uses the same seven annotated classes with three versioned prompt sets (bare names, two reliable synonyms and visual descriptions) in [`scripts/open_vocab/aquarium_prompts.json`](scripts/open_vocab/aquarium_prompts.json). Prompts are **model inputs**, not new ground-truth categories; mapping and splits stay fixed. The closed-set YOLO benchmark does not consume text prompts.
+
+The seven classes in the [RF100 benchmark metadata](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/labels_names.json) are **fish, jellyfish, penguin, puffin, shark, starfish, stingray**. The export's YOLO IDs are 0–6 in that order; derived COCO IDs are 1–7. All three closed-set detectors and the text-prompted YOLOE validation study use this same category mapping. See the audited export mapping below.
 
 ## Annotations and available exports
 

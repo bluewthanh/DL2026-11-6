@@ -1,6 +1,6 @@
 # Closed-set YOLO benchmark: YOLOv8n vs YOLO11n vs YOLOv10n
 
-This benchmark fine-tunes three COCO-pretrained **closed-set** nano detectors on RF100 Aquarium v2 and compares their accuracy, size and speed under one shared protocol. All three train on the same training split and use the same derived evaluation ground truth. They do **not** support text-prompted or zero-shot detection; confirm with course staff whether this revised scope meets the original project brief.
+This **supplementary** benchmark fine-tunes three COCO-pretrained **closed-set** nano detectors on RF100 Aquarium v2 and compares their accuracy, size and speed under one shared protocol. All three train on the same training split and use the same derived evaluation ground truth. They do **not** support text-prompted or zero-shot detection. The lecturer's text-description and wording-study requirements are addressed by the separate [YOLOE prompt experiment](../open_vocab/YOLOE.md); do not directly rank its zero-shot validation AP against supervised YOLO test AP.
 
 | Model | Config | Owner | Status |
 |---|---|---|---|
@@ -19,7 +19,7 @@ source .venv/bin/activate            # Windows: .venv\Scripts\activate
 # CUDA from pytorch.org, then: python -m pip install -r requirements-yolo.txt
 
 python -m aquadet env                # prints torch/CUDA/GPU that will be recorded with results
-python -m unittest discover -s tests # 10 fast checks, no GPU needed
+python -m unittest discover -s tests # fast checks, no GPU needed
 ```
 
 **Use the pinned `ultralytics==8.4.173`.** Training defaults and metric code change between releases, so a different version is a different experiment.
