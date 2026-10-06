@@ -1,0 +1,8 @@
+{
+  "wall_time_s": 102.8,
+  "epochs_completed": 100,
+  "best_fitness": 0.22578,
+  "best_epoch": 79,
+  "pretrained_weights": "weights/yolov8n.pt",
+  "data_yaml": "data/aquarium-v2-subsets/frac010_s1/data.yaml"
+}

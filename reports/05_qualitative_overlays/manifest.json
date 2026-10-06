@@ -1,0 +1,869 @@
+{
+  "coco": "data/aquarium-v2-coco/valid.json",
+  "display_thresholds": {
+    "YOLOv8n best.pt": {
+      "threshold": 0.45,
+      "rule": "F1-optimal at IoU 0.5 on all validation images",
+      "f1": 0.7591,
+      "source": "reports/03_setup3_data_efficiency/eval/yolov8n_e100_s0/best/coco_predictions_valid.json.gz"
+    },
+    "YOLOE bare": {
+      "threshold": 0.1,
+      "rule": "F1-optimal at IoU 0.5 on all validation images",
+      "f1": 0.3839,
+      "source": "reports/02_setup2_prompt_study/runs/bare/predictions.json.gz"
+    },
+    "YOLOE synonym": {
+      "threshold": 0.1,
+      "rule": "F1-optimal at IoU 0.5 on all validation images",
+      "f1": 0.3593,
+      "source": "reports/02_setup2_prompt_study/runs/synonym/predictions.json.gz"
+    },
+    "YOLOE description": {
+      "threshold": 0.05,
+      "rule": "F1-optimal at IoU 0.5 on all validation images",
+      "f1": 0.1012,
+      "source": "reports/02_setup2_prompt_study/runs/description/predictions.json.gz"
+    }
+  },
+  "selection_rule": "per class: image with the most GT boxes of that class (ties: lowest id); per contrast: top 3 images by |per-image F1 difference| at the display thresholds",
+  "wrong_class_pairs (gt -> predicted)": {
+    "YOLOv8n best.pt": {
+      "fish -> shark": 5,
+      "shark -> fish": 5,
+      "fish -> stingray": 3,
+      "starfish -> penguin": 2,
+      "shark -> stingray": 2,
+      "starfish -> puffin": 1,
+      "stingray -> fish": 1,
+      "penguin -> fish": 1,
+      "starfish -> fish": 1,
+      "fish -> starfish": 1
+    },
+    "YOLOE bare": {
+      "fish -> jellyfish": 50,
+      "shark -> fish": 41,
+      "jellyfish -> fish": 35,
+      "fish -> stingray": 27,
+      "fish -> puffin": 27,
+      "penguin -> puffin": 17,
+      "stingray -> fish": 13,
+      "starfish -> fish": 12,
+      "shark -> stingray": 12,
+      "puffin -> penguin": 9,
+      "fish -> penguin": 8,
+      "penguin -> fish": 6,
+      "penguin -> stingray": 5,
+      "starfish -> jellyfish": 4,
+      "starfish -> penguin": 3,
+      "puffin -> fish": 3,
+      "penguin -> jellyfish": 2,
+      "penguin -> shark": 2,
+      "starfish -> puffin": 2,
+      "stingray -> puffin": 2,
+      "jellyfish -> starfish": 2,
+      "fish -> shark": 1,
+      "shark -> penguin": 1,
+      "starfish -> stingray": 1,
+      "shark -> jellyfish": 1,
+      "shark -> puffin": 1,
+      "stingray -> penguin": 1,
+      "fish -> starfish": 1,
+      "stingray -> jellyfish": 1,
+      "jellyfish -> puffin": 1
+    },
+    "YOLOE synonym": {
+      "jellyfish -> fish": 56,
+      "shark -> fish": 42,
+      "fish -> stingray": 29,
+      "fish -> puffin": 28,
+      "penguin -> puffin": 17,
+      "stingray -> fish": 13,
+      "shark -> stingray": 12,
+      "starfish -> fish": 11,
+      "puffin -> penguin": 9,
+      "fish -> penguin": 8,
+      "jellyfish -> starfish": 7,
+      "penguin -> fish": 6,
+      "fish -> starfish": 6,
+      "penguin -> stingray": 5,
+      "starfish -> jellyfish": 5,
+      "fish -> jellyfish": 4,
+      "starfish -> penguin": 3,
+      "puffin -> fish": 3,
+      "jellyfish -> puffin": 3,
+      "penguin -> shark": 2,
+      "starfish -> puffin": 2,
+      "starfish -> stingray": 2,
+      "shark -> starfish": 2,
+      "stingray -> puffin": 2,
+      "fish -> shark": 1,
+      "shark -> penguin": 1,
+      "shark -> puffin": 1,
+      "stingray -> penguin": 1,
+      "stingray -> starfish": 1
+    },
+    "YOLOE description": {
+      "fish -> shark": 112,
+      "fish -> penguin": 110,
+      "fish -> starfish": 108,
+      "fish -> jellyfish": 78,
+      "fish -> stingray": 52,
+      "jellyfish -> starfish": 38,
+      "puffin -> penguin": 28,
+      "shark -> penguin": 27,
+      "shark -> starfish": 25,
+      "stingray -> shark": 20,
+      "stingray -> penguin": 19,
+      "shark -> stingray": 17,
+      "penguin -> fish": 12,
+      "jellyfish -> shark": 9,
+      "starfish -> stingray": 9,
+      "shark -> jellyfish": 8,
+      "stingray -> starfish": 8,
+      "puffin -> starfish": 7,
+      "starfish -> penguin": 6,
+      "starfish -> jellyfish": 6,
+      "penguin -> starfish": 5,
+      "shark -> fish": 5,
+      "penguin -> shark": 3,
+      "penguin -> puffin": 3,
+      "starfish -> fish": 3,
+      "stingray -> fish": 3,
+      "stingray -> jellyfish": 3,
+      "penguin -> stingray": 2,
+      "penguin -> jellyfish": 2,
+      "puffin -> fish": 2,
+      "starfish -> shark": 1,
+      "puffin -> jellyfish": 1,
+      "fish -> puffin": 1,
+      "jellyfish -> puffin": 1
+    }
+  },
+  "images": [
+    {
+      "image_id": 5,
+      "file_name": "valid/images/IMG_2297_jpeg_jpg.rf.810655be620a3d5b3ccda46c337d9cc8.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE description: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_005.jpg",
+      "gt_per_class": {
+        "puffin": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE synonym": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        }
+      }
+    },
+    {
+      "image_id": 10,
+      "file_name": "valid/images/IMG_2325_jpeg_jpg.rf.728f2537a542aeb389e2d4edd2104df9.jpg",
+      "reasons": [
+        "most 'penguin' boxes"
+      ],
+      "figure": "figures/val_010.jpg",
+      "gt_per_class": {
+        "penguin": 22
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 12,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 10
+        },
+        "YOLOE bare": {
+          "correct": 12,
+          "wrong_class": 7,
+          "poor_box": 0,
+          "duplicate": 2,
+          "background": 0,
+          "missed": 10
+        },
+        "YOLOE synonym": {
+          "correct": 12,
+          "wrong_class": 6,
+          "poor_box": 0,
+          "duplicate": 2,
+          "background": 0,
+          "missed": 10
+        },
+        "YOLOE description": {
+          "correct": 9,
+          "wrong_class": 6,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 2,
+          "missed": 13
+        }
+      }
+    },
+    {
+      "image_id": 11,
+      "file_name": "valid/images/IMG_2329_jpeg_jpg.rf.2cf53176cdee47de0768096e20a74363.jpg",
+      "reasons": [
+        "YOLOv8n best.pt vs YOLOE bare: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_011.jpg",
+      "gt_per_class": {
+        "penguin": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        },
+        "YOLOE synonym": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 1
+        }
+      }
+    },
+    {
+      "image_id": 13,
+      "file_name": "valid/images/IMG_2334_jpeg_jpg.rf.b55d3c025253be5ff14e9c1da04496e4.jpg",
+      "reasons": [
+        "YOLOv8n best.pt vs YOLOE bare: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_013.jpg",
+      "gt_per_class": {
+        "penguin": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 2,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 4,
+          "missed": 1
+        },
+        "YOLOE synonym": {
+          "correct": 0,
+          "wrong_class": 2,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 4,
+          "missed": 1
+        },
+        "YOLOE description": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 3,
+          "missed": 0
+        }
+      }
+    },
+    {
+      "image_id": 15,
+      "file_name": "valid/images/IMG_2339_jpeg_jpg.rf.333e6ba9da6ae3f41a9993717c27c140.jpg",
+      "reasons": [
+        "YOLOv8n best.pt vs YOLOE bare: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_015.jpg",
+      "gt_per_class": {
+        "penguin": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        },
+        "YOLOE synonym": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        },
+        "YOLOE description": {
+          "correct": 1,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 0
+        }
+      }
+    },
+    {
+      "image_id": 22,
+      "file_name": "valid/images/IMG_2381_jpeg_jpg.rf.3ca566d8ba2b75d1a4fce2e4cee3f273.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE synonym: per-image F1 -0.67"
+      ],
+      "figure": "figures/val_022.jpg",
+      "gt_per_class": {
+        "starfish": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        },
+        "YOLOE synonym": {
+          "correct": 1,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 1,
+          "wrong_class": 1,
+          "poor_box": 1,
+          "duplicate": 1,
+          "background": 1,
+          "missed": 0
+        }
+      }
+    },
+    {
+      "image_id": 34,
+      "file_name": "valid/images/IMG_2425_jpeg_jpg.rf.193df33c32dd4cc7ceabad6fbb2267bc.jpg",
+      "reasons": [
+        "most 'shark' boxes"
+      ],
+      "figure": "figures/val_034.jpg",
+      "gt_per_class": {
+        "shark": 6,
+        "fish": 17,
+        "stingray": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 19,
+          "wrong_class": 1,
+          "poor_box": 1,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 5
+        },
+        "YOLOE bare": {
+          "correct": 11,
+          "wrong_class": 11,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 6,
+          "missed": 13
+        },
+        "YOLOE synonym": {
+          "correct": 11,
+          "wrong_class": 8,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 5,
+          "missed": 13
+        },
+        "YOLOE description": {
+          "correct": 3,
+          "wrong_class": 37,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 12,
+          "missed": 21
+        }
+      }
+    },
+    {
+      "image_id": 47,
+      "file_name": "valid/images/IMG_2522_jpeg_jpg.rf.c2674fd44a82de5996670de54dd66a5f.jpg",
+      "reasons": [
+        "most 'puffin' boxes"
+      ],
+      "figure": "figures/val_047.jpg",
+      "gt_per_class": {
+        "puffin": 11
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 5,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 6
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 11
+        },
+        "YOLOE synonym": {
+          "correct": 0,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 11
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 11
+        }
+      }
+    },
+    {
+      "image_id": 50,
+      "file_name": "valid/images/IMG_2531_jpeg_jpg.rf.4015bdd02d8b74259f05dd5fdc510ce8.jpg",
+      "reasons": [
+        "most 'starfish' boxes"
+      ],
+      "figure": "figures/val_050.jpg",
+      "gt_per_class": {
+        "fish": 2,
+        "starfish": 4
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 4,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 2
+        },
+        "YOLOE bare": {
+          "correct": 2,
+          "wrong_class": 6,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 4
+        },
+        "YOLOE synonym": {
+          "correct": 2,
+          "wrong_class": 5,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 4
+        },
+        "YOLOE description": {
+          "correct": 4,
+          "wrong_class": 3,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 2
+        }
+      }
+    },
+    {
+      "image_id": 60,
+      "file_name": "valid/images/IMG_2586_jpeg_jpg.rf.f3fbcfa0159fd525ffafd54207d11245.jpg",
+      "reasons": [
+        "most 'stingray' boxes"
+      ],
+      "figure": "figures/val_060.jpg",
+      "gt_per_class": {
+        "stingray": 3
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 3,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 3,
+          "wrong_class": 0,
+          "poor_box": 2,
+          "duplicate": 1,
+          "background": 3,
+          "missed": 0
+        },
+        "YOLOE synonym": {
+          "correct": 3,
+          "wrong_class": 0,
+          "poor_box": 2,
+          "duplicate": 1,
+          "background": 2,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 1,
+          "wrong_class": 8,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 6,
+          "missed": 2
+        }
+      }
+    },
+    {
+      "image_id": 66,
+      "file_name": "valid/images/IMG_2626_jpeg_jpg.rf.27751a1c113aa9c591f0d81935f4ea44.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE description: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_066.jpg",
+      "gt_per_class": {
+        "stingray": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE synonym": {
+          "correct": 1,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 2,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 1
+        }
+      }
+    },
+    {
+      "image_id": 70,
+      "file_name": "valid/images/IMG_2645_jpeg_jpg.rf.4dd49eadf3ab920c663c978f7ab9236b.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE description: per-image F1 +1.00"
+      ],
+      "figure": "figures/val_070.jpg",
+      "gt_per_class": {
+        "stingray": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE synonym": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 2,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 1
+        }
+      }
+    },
+    {
+      "image_id": 98,
+      "file_name": "valid/images/IMG_8460_jpg.rf.9642380f4ecfa2db83fbe157a9df21c0.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE synonym: per-image F1 -0.67"
+      ],
+      "figure": "figures/val_098.jpg",
+      "gt_per_class": {
+        "fish": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 1
+        },
+        "YOLOE synonym": {
+          "correct": 1,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 0
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 1,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 2,
+          "missed": 1
+        }
+      }
+    },
+    {
+      "image_id": 100,
+      "file_name": "valid/images/IMG_8489_jpg.rf.90731d44bbabd256c329ca3827b7c02c.jpg",
+      "reasons": [
+        "most 'jellyfish' boxes"
+      ],
+      "figure": "figures/val_100.jpg",
+      "gt_per_class": {
+        "jellyfish": 33
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 29,
+          "wrong_class": 0,
+          "poor_box": 9,
+          "duplicate": 0,
+          "background": 1,
+          "missed": 4
+        },
+        "YOLOE bare": {
+          "correct": 17,
+          "wrong_class": 1,
+          "poor_box": 2,
+          "duplicate": 2,
+          "background": 2,
+          "missed": 16
+        },
+        "YOLOE synonym": {
+          "correct": 7,
+          "wrong_class": 7,
+          "poor_box": 1,
+          "duplicate": 0,
+          "background": 3,
+          "missed": 26
+        },
+        "YOLOE description": {
+          "correct": 4,
+          "wrong_class": 17,
+          "poor_box": 4,
+          "duplicate": 0,
+          "background": 9,
+          "missed": 29
+        }
+      }
+    },
+    {
+      "image_id": 119,
+      "file_name": "valid/images/IMG_8579_jpg.rf.94b3758d2c288d4f11b58b6d426841b2.jpg",
+      "reasons": [
+        "most 'fish' boxes"
+      ],
+      "figure": "figures/val_119.jpg",
+      "gt_per_class": {
+        "fish": 43,
+        "stingray": 1
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 30,
+          "wrong_class": 0,
+          "poor_box": 2,
+          "duplicate": 0,
+          "background": 11,
+          "missed": 14
+        },
+        "YOLOE bare": {
+          "correct": 11,
+          "wrong_class": 5,
+          "poor_box": 3,
+          "duplicate": 0,
+          "background": 7,
+          "missed": 33
+        },
+        "YOLOE synonym": {
+          "correct": 11,
+          "wrong_class": 1,
+          "poor_box": 3,
+          "duplicate": 0,
+          "background": 5,
+          "missed": 33
+        },
+        "YOLOE description": {
+          "correct": 0,
+          "wrong_class": 3,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 2,
+          "missed": 44
+        }
+      }
+    },
+    {
+      "image_id": 127,
+      "file_name": "valid/images/IMG_8599_MOV-1_jpg.rf.8732e7e37d6e71e5c249f2e5869fd59c.jpg",
+      "reasons": [
+        "YOLOE bare vs YOLOE synonym: per-image F1 +0.77"
+      ],
+      "figure": "figures/val_127.jpg",
+      "gt_per_class": {
+        "jellyfish": 5
+      },
+      "counts": {
+        "YOLOv8n best.pt": {
+          "correct": 5,
+          "wrong_class": 0,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE bare": {
+          "correct": 5,
+          "wrong_class": 3,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 0
+        },
+        "YOLOE synonym": {
+          "correct": 0,
+          "wrong_class": 8,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 5
+        },
+        "YOLOE description": {
+          "correct": 3,
+          "wrong_class": 4,
+          "poor_box": 0,
+          "duplicate": 0,
+          "background": 0,
+          "missed": 2
+        }
+      }
+    }
+  ]
+}

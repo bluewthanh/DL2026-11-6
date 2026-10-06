@@ -1,7 +1,7 @@
 """Closed-set YOLO benchmark.
 
     python -m aquadet run --model yolov8n   # prepare, train, evaluate, benchmark, summarize
-    python -m aquadet compare               # leaderboard from reports/runs/*.json
+    python -m aquadet compare               # summary table from reports/runs/*.json
 """
 
 import argparse

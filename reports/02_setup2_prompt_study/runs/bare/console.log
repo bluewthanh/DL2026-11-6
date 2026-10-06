@@ -1,0 +1,178 @@
+.venv-yoloe/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+[1/127] image 1: 115 boxes, 3981 ms
+[2/127] image 2: 150 boxes, 30 ms
+[3/127] image 3: 153 boxes, 29 ms
+[4/127] image 4: 71 boxes, 25 ms
+[5/127] image 5: 102 boxes, 30 ms
+[6/127] image 6: 66 boxes, 25 ms
+[7/127] image 7: 67 boxes, 28 ms
+[8/127] image 8: 73 boxes, 25 ms
+[9/127] image 9: 84 boxes, 28 ms
+[10/127] image 10: 206 boxes, 30 ms
+[11/127] image 11: 31 boxes, 26 ms
+[12/127] image 12: 140 boxes, 27 ms
+[13/127] image 13: 38 boxes, 26 ms
+[14/127] image 14: 96 boxes, 25 ms
+[15/127] image 15: 49 boxes, 26 ms
+[16/127] image 16: 83 boxes, 26 ms
+[17/127] image 17: 172 boxes, 31 ms
+[18/127] image 18: 85 boxes, 25 ms
+[19/127] image 19: 98 boxes, 29 ms
+[20/127] image 20: 76 boxes, 24 ms
+[21/127] image 21: 74 boxes, 26 ms
+[22/127] image 22: 50 boxes, 24 ms
+[23/127] image 23: 40 boxes, 26 ms
+[24/127] image 24: 69 boxes, 24 ms
+[25/127] image 25: 198 boxes, 32 ms
+[26/127] image 26: 189 boxes, 30 ms
+[27/127] image 27: 197 boxes, 32 ms
+[28/127] image 28: 189 boxes, 29 ms
+[29/127] image 29: 181 boxes, 32 ms
+[30/127] image 30: 300 boxes, 35 ms
+[31/127] image 31: 229 boxes, 31 ms
+[32/127] image 32: 114 boxes, 25 ms
+[33/127] image 33: 300 boxes, 34 ms
+[34/127] image 34: 260 boxes, 30 ms
+[35/127] image 35: 183 boxes, 29 ms
+[36/127] image 36: 300 boxes, 30 ms
+[37/127] image 37: 231 boxes, 31 ms
+[38/127] image 38: 155 boxes, 26 ms
+[39/127] image 39: 117 boxes, 27 ms
+[40/127] image 40: 112 boxes, 23 ms
+[41/127] image 41: 300 boxes, 33 ms
+[42/127] image 42: 300 boxes, 31 ms
+[43/127] image 43: 49 boxes, 25 ms
+[44/127] image 44: 49 boxes, 22 ms
+[45/127] image 45: 53 boxes, 27 ms
+[46/127] image 46: 116 boxes, 27 ms
+[47/127] image 47: 300 boxes, 37 ms
+[48/127] image 48: 114 boxes, 27 ms
+[49/127] image 49: 124 boxes, 28 ms
+[50/127] image 50: 149 boxes, 26 ms
+[51/127] image 51: 129 boxes, 28 ms
+[52/127] image 52: 82 boxes, 23 ms
+[53/127] image 53: 28 boxes, 26 ms
+[54/127] image 54: 84 boxes, 24 ms
+[55/127] image 55: 73 boxes, 28 ms
+[56/127] image 56: 163 boxes, 27 ms
+[57/127] image 57: 181 boxes, 30 ms
+[58/127] image 58: 262 boxes, 31 ms
+[59/127] image 59: 171 boxes, 29 ms
+[60/127] image 60: 221 boxes, 29 ms
+[61/127] image 61: 89 boxes, 28 ms
+[62/127] image 62: 240 boxes, 30 ms
+[63/127] image 63: 65 boxes, 27 ms
+[64/127] image 64: 278 boxes, 31 ms
+[65/127] image 65: 46 boxes, 27 ms
+[66/127] image 66: 9 boxes, 24 ms
+[67/127] image 67: 67 boxes, 29 ms
+[68/127] image 68: 68 boxes, 26 ms
+[69/127] image 69: 104 boxes, 28 ms
+[70/127] image 70: 34 boxes, 23 ms
+[71/127] image 71: 82 boxes, 27 ms
+[72/127] image 72: 104 boxes, 26 ms
+[73/127] image 73: 160 boxes, 30 ms
+[74/127] image 74: 51 boxes, 24 ms
+[75/127] image 75: 75 boxes, 27 ms
+[76/127] image 76: 107 boxes, 26 ms
+[77/127] image 77: 170 boxes, 31 ms
+[78/127] image 78: 203 boxes, 29 ms
+[79/127] image 79: 167 boxes, 30 ms
+[80/127] image 80: 44 boxes, 23 ms
+[81/127] image 81: 114 boxes, 28 ms
+[82/127] image 82: 54 boxes, 24 ms
+[83/127] image 83: 81 boxes, 27 ms
+[84/127] image 84: 51 boxes, 24 ms
+[85/127] image 85: 29 boxes, 24 ms
+[86/127] image 86: 125 boxes, 27 ms
+[87/127] image 87: 129 boxes, 29 ms
+[88/127] image 88: 123 boxes, 65 ms
+[89/127] image 89: 159 boxes, 64 ms
+[90/127] image 90: 24 boxes, 56 ms
+[91/127] image 91: 134 boxes, 60 ms
+[92/127] image 92: 130 boxes, 54 ms
+[93/127] image 93: 98 boxes, 58 ms
+[94/127] image 94: 104 boxes, 59 ms
+[95/127] image 95: 91 boxes, 55 ms
+[96/127] image 96: 112 boxes, 53 ms
+[97/127] image 97: 136 boxes, 55 ms
+[98/127] image 98: 27 boxes, 49 ms
+[99/127] image 99: 144 boxes, 57 ms
+[100/127] image 100: 300 boxes, 62 ms
+[101/127] image 101: 108 boxes, 36 ms
+[102/127] image 102: 130 boxes, 21 ms
+[103/127] image 103: 141 boxes, 21 ms
+[104/127] image 104: 300 boxes, 33 ms
+[105/127] image 105: 300 boxes, 25 ms
+[106/127] image 106: 119 boxes, 62 ms
+[107/127] image 107: 116 boxes, 63 ms
+[108/127] image 108: 85 boxes, 60 ms
+[109/127] image 109: 186 boxes, 68 ms
+[110/127] image 110: 76 boxes, 58 ms
+[111/127] image 111: 159 boxes, 23 ms
+[112/127] image 112: 181 boxes, 23 ms
+[113/127] image 113: 128 boxes, 21 ms
+[114/127] image 114: 151 boxes, 22 ms
+[115/127] image 115: 273 boxes, 25 ms
+[116/127] image 116: 96 boxes, 19 ms
+[117/127] image 117: 20 boxes, 17 ms
+[118/127] image 118: 44 boxes, 19 ms
+[119/127] image 119: 299 boxes, 66 ms
+[120/127] image 120: 197 boxes, 22 ms
+[121/127] image 121: 65 boxes, 19 ms
+[122/127] image 122: 85 boxes, 19 ms
+[123/127] image 123: 39 boxes, 18 ms
+[124/127] image 124: 133 boxes, 21 ms
+[125/127] image 125: 94 boxes, 20 ms
+[126/127] image 126: 279 boxes, 25 ms
+[127/127] image 127: 40 boxes, 16 ms
+Loading and preparing results...
+DONE (t=0.01s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.66s).
+Accumulating evaluation results...
+DONE (t=0.08s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.131
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.230
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.118
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.010
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.062
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.147
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.117
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.275
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.358
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.233
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.216
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.377
+{
+  "AP": 0.13108053397010175,
+  "AP50": 0.22975674719762607,
+  "per_class_AP": {
+    "fish": 0.19591991422179228,
+    "jellyfish": 0.12842932134427087,
+    "penguin": 0.11194664315589652,
+    "puffin": 0.062163699383739515,
+    "shark": 0.05412051965598281,
+    "starfish": 0.1774974136462982,
+    "stingray": 0.18748622638273188
+  },
+  "iou": "0.50:0.95",
+  "area": "all",
+  "max_dets": 100,
+  "images_evaluated": 127,
+  "detections": 16563,
+  "mean_wall_ms_per_image": 62.609662716166945
+}
+Saved results in results/yoloe26s_valid_bare_gpu_repro

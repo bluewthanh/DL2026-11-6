@@ -1,0 +1,131 @@
+{
+  "mode": "open-vocabulary text prompts",
+  "model": "yoloe-26s-seg.pt",
+  "prompts": [
+    "fish",
+    "jellyfish",
+    "penguin",
+    "puffin",
+    "shark",
+    "starfish",
+    "stingray"
+  ],
+  "image": "data/aquarium-v2-yolo/valid/images/IMG_2325_jpeg_jpg.rf.728f2537a542aeb389e2d4edd2104df9.jpg",
+  "conf": 0.25,
+  "iou": 0.7,
+  "imgsz": 640,
+  "max_det": 300,
+  "agnostic_nms": false,
+  "detections": [
+    {
+      "label": "penguin",
+      "score": 0.6285,
+      "xyxy": [
+        428.1,
+        252.8,
+        540.4,
+        499.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.5451,
+      "xyxy": [
+        736.8,
+        276.5,
+        775.5,
+        352.2
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.5303,
+      "xyxy": [
+        781.3,
+        279.1,
+        821.4,
+        350.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.501,
+      "xyxy": [
+        822.1,
+        278.0,
+        869.4,
+        355.9
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4435,
+      "xyxy": [
+        238.7,
+        265.8,
+        313.4,
+        377.2
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4327,
+      "xyxy": [
+        561.0,
+        225.9,
+        621.1,
+        372.1
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4266,
+      "xyxy": [
+        316.5,
+        260.8,
+        367.1,
+        358.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3785,
+      "xyxy": [
+        559.9,
+        925.7,
+        1143.7,
+        1152.5
+      ]
+    },
+    {
+      "label": "fish",
+      "score": 0.3126,
+      "xyxy": [
+        586.1,
+        739.8,
+        721.4,
+        843.9
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3058,
+      "xyxy": [
+        624.2,
+        229.8,
+        710.8,
+        378.8
+      ]
+    },
+    {
+      "label": "jellyfish",
+      "score": 0.2961,
+      "xyxy": [
+        586.7,
+        740.3,
+        721.5,
+        844.6
+      ]
+    }
+  ]
+}

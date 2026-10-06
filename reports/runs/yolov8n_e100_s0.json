@@ -13,7 +13,7 @@
     "best_fitness": 0.46323,
     "best_epoch": 86,
     "pretrained_weights": "weights/yolov8n.pt",
-    "data_yaml": "/media/yitec/Storage/minh-workspace/DL2026-11-6/data/aquarium-v2-yolo/data.yaml"
+    "data_yaml": "data/aquarium-v2-yolo/data.yaml"
   },
   "eval": {
     "val": {

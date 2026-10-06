@@ -1,0 +1,1145 @@
+[
+  {
+    "image_id": 1,
+    "elapsed_ms": 352.50000236555934,
+    "ultralytics_speed_ms": {
+      "preprocess": 10.13984577730298,
+      "inference": 10.311934631317854,
+      "postprocess": 6.733906920999289
+    }
+  },
+  {
+    "image_id": 2,
+    "elapsed_ms": 29.284783639013767,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.260802149772644,
+      "inference": 11.369045823812485,
+      "postprocess": 6.5045468509197235
+    }
+  },
+  {
+    "image_id": 3,
+    "elapsed_ms": 30.831255950033665,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.729366835206747,
+      "inference": 11.401002760976553,
+      "postprocess": 6.6421800293028355
+    }
+  },
+  {
+    "image_id": 4,
+    "elapsed_ms": 24.60435824468732,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3723410665988922,
+      "inference": 10.477040894329548,
+      "postprocess": 3.340137656778097
+    }
+  },
+  {
+    "image_id": 5,
+    "elapsed_ms": 28.5858241841197,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.196581870317459,
+      "inference": 10.247463826090097,
+      "postprocess": 4.445200320333242
+    }
+  },
+  {
+    "image_id": 6,
+    "elapsed_ms": 23.821014910936356,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2462977319955826,
+      "inference": 10.219223331660032,
+      "postprocess": 3.215006086975336
+    }
+  },
+  {
+    "image_id": 7,
+    "elapsed_ms": 26.320070028305054,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1925320141017437,
+      "inference": 10.131102055311203,
+      "postprocess": 3.3575999550521374
+    }
+  },
+  {
+    "image_id": 8,
+    "elapsed_ms": 24.194844998419285,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2131519615650177,
+      "inference": 10.119359940290451,
+      "postprocess": 3.490888047963381
+    }
+  },
+  {
+    "image_id": 9,
+    "elapsed_ms": 26.236664038151503,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1995849199593067,
+      "inference": 10.08729636669159,
+      "postprocess": 4.09011822193861
+    }
+  },
+  {
+    "image_id": 10,
+    "elapsed_ms": 29.173451010137796,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2149210087954998,
+      "inference": 10.093467310070992,
+      "postprocess": 8.34942189976573
+    }
+  },
+  {
+    "image_id": 11,
+    "elapsed_ms": 23.963364772498608,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2092678807675838,
+      "inference": 10.206518229097128,
+      "postprocess": 2.048170194029808
+    }
+  },
+  {
+    "image_id": 12,
+    "elapsed_ms": 26.119054295122623,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.209939830005169,
+      "inference": 10.178218130022287,
+      "postprocess": 5.998572334647179
+    }
+  },
+  {
+    "image_id": 13,
+    "elapsed_ms": 24.528009817004204,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2035337276756763,
+      "inference": 10.060543660074472,
+      "postprocess": 2.351182047277689
+    }
+  },
+  {
+    "image_id": 14,
+    "elapsed_ms": 24.572933092713356,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1966102756559849,
+      "inference": 10.080981068313122,
+      "postprocess": 4.494738765060902
+    }
+  },
+  {
+    "image_id": 15,
+    "elapsed_ms": 25.595339946448803,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2211240828037262,
+      "inference": 10.090664960443974,
+      "postprocess": 2.732831984758377
+    }
+  },
+  {
+    "image_id": 16,
+    "elapsed_ms": 24.97652592137456,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.219022087752819,
+      "inference": 10.204570833593607,
+      "postprocess": 4.3366700410842896
+    }
+  },
+  {
+    "image_id": 17,
+    "elapsed_ms": 30.69439623504877,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2533213011920452,
+      "inference": 10.83742082118988,
+      "postprocess": 7.412776816636324
+    }
+  },
+  {
+    "image_id": 18,
+    "elapsed_ms": 25.046903174370527,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.35734211653471,
+      "inference": 10.396463330835104,
+      "postprocess": 3.9703091606497765
+    }
+  },
+  {
+    "image_id": 19,
+    "elapsed_ms": 27.72139897570014,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3027498498558998,
+      "inference": 10.49669086933136,
+      "postprocess": 4.497271031141281
+    }
+  },
+  {
+    "image_id": 20,
+    "elapsed_ms": 24.593491107225418,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.334324013441801,
+      "inference": 10.424179024994373,
+      "postprocess": 3.879243042320013
+    }
+  },
+  {
+    "image_id": 21,
+    "elapsed_ms": 25.865054223686457,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3198950327932835,
+      "inference": 10.291798040270805,
+      "postprocess": 3.783164080232382
+    }
+  },
+  {
+    "image_id": 22,
+    "elapsed_ms": 24.169217329472303,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3438579626381397,
+      "inference": 10.29607793316245,
+      "postprocess": 2.809954807162285
+    }
+  },
+  {
+    "image_id": 23,
+    "elapsed_ms": 25.798197835683823,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2750914320349693,
+      "inference": 10.219721123576164,
+      "postprocess": 2.4683410301804543
+    }
+  },
+  {
+    "image_id": 24,
+    "elapsed_ms": 25.06578667089343,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4486978761851788,
+      "inference": 10.723695158958435,
+      "postprocess": 3.7851198576390743
+    }
+  },
+  {
+    "image_id": 25,
+    "elapsed_ms": 30.87222995236516,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2962790206074715,
+      "inference": 10.412561241537333,
+      "postprocess": 7.046590093523264
+    }
+  },
+  {
+    "image_id": 26,
+    "elapsed_ms": 29.247157741338015,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2996969744563103,
+      "inference": 10.337197221815586,
+      "postprocess": 7.2443741373717785
+    }
+  },
+  {
+    "image_id": 27,
+    "elapsed_ms": 32.02141309157014,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2748092412948608,
+      "inference": 10.373421013355255,
+      "postprocess": 7.841691840440035
+    }
+  },
+  {
+    "image_id": 28,
+    "elapsed_ms": 28.64779904484749,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2663467787206173,
+      "inference": 10.351423174142838,
+      "postprocess": 7.385054603219032
+    }
+  },
+  {
+    "image_id": 29,
+    "elapsed_ms": 31.027479097247124,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2879460118710995,
+      "inference": 10.372721124440432,
+      "postprocess": 7.292493246495724
+    }
+  },
+  {
+    "image_id": 30,
+    "elapsed_ms": 34.074772614985704,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2723221443593502,
+      "inference": 10.310071986168623,
+      "postprocess": 12.181154917925596
+    }
+  },
+  {
+    "image_id": 31,
+    "elapsed_ms": 30.262321699410677,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2936880812048912,
+      "inference": 10.31885389238596,
+      "postprocess": 8.541402872651815
+    }
+  },
+  {
+    "image_id": 32,
+    "elapsed_ms": 24.95796140283346,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3509239070117474,
+      "inference": 10.491824243217707,
+      "postprocess": 4.709230735898018
+    }
+  },
+  {
+    "image_id": 33,
+    "elapsed_ms": 33.8051738217473,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3437098823487759,
+      "inference": 10.399156250059605,
+      "postprocess": 11.374651920050383
+    }
+  },
+  {
+    "image_id": 34,
+    "elapsed_ms": 29.5600900426507,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3355803675949574,
+      "inference": 10.414690244942904,
+      "postprocess": 9.584040381014347
+    }
+  },
+  {
+    "image_id": 35,
+    "elapsed_ms": 29.077365063130856,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2920452281832695,
+      "inference": 10.343949776142836,
+      "postprocess": 7.078683935105801
+    }
+  },
+  {
+    "image_id": 36,
+    "elapsed_ms": 30.711208935827017,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3517029583454132,
+      "inference": 10.339084081351757,
+      "postprocess": 11.115194763988256
+    }
+  },
+  {
+    "image_id": 37,
+    "elapsed_ms": 30.429445207118988,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3083042576909065,
+      "inference": 10.3404619731009,
+      "postprocess": 8.423599880188704
+    }
+  },
+  {
+    "image_id": 38,
+    "elapsed_ms": 26.559259742498398,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3049347326159477,
+      "inference": 10.397401172667742,
+      "postprocess": 6.462668068706989
+    }
+  },
+  {
+    "image_id": 39,
+    "elapsed_ms": 27.61737210676074,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4659520238637924,
+      "inference": 10.56176982820034,
+      "postprocess": 4.819020628929138
+    }
+  },
+  {
+    "image_id": 40,
+    "elapsed_ms": 23.938952945172787,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3030883856117725,
+      "inference": 10.311686899513006,
+      "postprocess": 4.817677196115255
+    }
+  },
+  {
+    "image_id": 41,
+    "elapsed_ms": 34.31645408272743,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3620932586491108,
+      "inference": 10.266805998980999,
+      "postprocess": 11.965660843998194
+    }
+  },
+  {
+    "image_id": 42,
+    "elapsed_ms": 31.741030048578978,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.302757766097784,
+      "inference": 10.288456920534372,
+      "postprocess": 11.863813735544682
+    }
+  },
+  {
+    "image_id": 43,
+    "elapsed_ms": 26.32998116314411,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3029729016125202,
+      "inference": 10.392719879746437,
+      "postprocess": 2.777107059955597
+    }
+  },
+  {
+    "image_id": 44,
+    "elapsed_ms": 23.08692689985037,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.346078235656023,
+      "inference": 10.353235993534327,
+      "postprocess": 2.629827708005905
+    }
+  },
+  {
+    "image_id": 45,
+    "elapsed_ms": 27.181284967809916,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.347605139017105,
+      "inference": 10.44404087588191,
+      "postprocess": 2.724182792007923
+    }
+  },
+  {
+    "image_id": 46,
+    "elapsed_ms": 27.672038413584232,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3287640176713467,
+      "inference": 10.473600123077631,
+      "postprocess": 5.010741297155619
+    }
+  },
+  {
+    "image_id": 47,
+    "elapsed_ms": 37.8674641251564,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3643759302794933,
+      "inference": 10.444846004247665,
+      "postprocess": 11.866114102303982
+    }
+  },
+  {
+    "image_id": 48,
+    "elapsed_ms": 26.809686794877052,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.351505983620882,
+      "inference": 10.449947323650122,
+      "postprocess": 4.559480119496584
+    }
+  },
+  {
+    "image_id": 49,
+    "elapsed_ms": 29.104297049343586,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3219621032476425,
+      "inference": 10.341941844671965,
+      "postprocess": 5.584808066487312
+    }
+  },
+  {
+    "image_id": 50,
+    "elapsed_ms": 26.635566726326942,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.352496910840273,
+      "inference": 10.321640875190496,
+      "postprocess": 6.16230396553874
+    }
+  },
+  {
+    "image_id": 51,
+    "elapsed_ms": 28.408655896782875,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3619950041174889,
+      "inference": 10.535819921642542,
+      "postprocess": 5.315233953297138
+    }
+  },
+  {
+    "image_id": 52,
+    "elapsed_ms": 23.39191362261772,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.245021354407072,
+      "inference": 10.26701694354415,
+      "postprocess": 4.071435891091824
+    }
+  },
+  {
+    "image_id": 53,
+    "elapsed_ms": 26.47268306463957,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2860712595283985,
+      "inference": 10.291270911693573,
+      "postprocess": 2.0653209649026394
+    }
+  },
+  {
+    "image_id": 54,
+    "elapsed_ms": 25.01556696370244,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2703281827270985,
+      "inference": 10.30340837314725,
+      "postprocess": 4.142365884035826
+    }
+  },
+  {
+    "image_id": 55,
+    "elapsed_ms": 27.892117854207754,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2687579728662968,
+      "inference": 10.470496024936438,
+      "postprocess": 3.5225041210651398
+    }
+  },
+  {
+    "image_id": 56,
+    "elapsed_ms": 27.21263188868761,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2617679312825203,
+      "inference": 10.289418045431376,
+      "postprocess": 6.722543854266405
+    }
+  },
+  {
+    "image_id": 57,
+    "elapsed_ms": 30.00768693163991,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2550810351967812,
+      "inference": 10.288423858582973,
+      "postprocess": 7.210397161543369
+    }
+  },
+  {
+    "image_id": 58,
+    "elapsed_ms": 30.34259472042322,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.279398798942566,
+      "inference": 10.244389064610004,
+      "postprocess": 9.704202879220247
+    }
+  },
+  {
+    "image_id": 59,
+    "elapsed_ms": 30.412735883146524,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3237628154456615,
+      "inference": 10.650507174432278,
+      "postprocess": 7.096892222762108
+    }
+  },
+  {
+    "image_id": 60,
+    "elapsed_ms": 29.024435207247734,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.349425408989191,
+      "inference": 10.439126286655664,
+      "postprocess": 8.072073105722666
+    }
+  },
+  {
+    "image_id": 61,
+    "elapsed_ms": 27.254880871623755,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2563499622046947,
+      "inference": 10.41236100718379,
+      "postprocess": 4.172283224761486
+    }
+  },
+  {
+    "image_id": 62,
+    "elapsed_ms": 28.514215257018805,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3126800768077374,
+      "inference": 10.239600203931332,
+      "postprocess": 8.474357891827822
+    }
+  },
+  {
+    "image_id": 63,
+    "elapsed_ms": 26.523149106651545,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.281443051993847,
+      "inference": 10.211511049419641,
+      "postprocess": 3.457635175436735
+    }
+  },
+  {
+    "image_id": 64,
+    "elapsed_ms": 30.70419281721115,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4497251249849796,
+      "inference": 10.531401261687279,
+      "postprocess": 9.787922259420156
+    }
+  },
+  {
+    "image_id": 65,
+    "elapsed_ms": 27.073522098362446,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2768777087330818,
+      "inference": 10.244997218251228,
+      "postprocess": 2.9470757581293583
+    }
+  },
+  {
+    "image_id": 66,
+    "elapsed_ms": 23.099968675523996,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3176272623240948,
+      "inference": 10.324771050363779,
+      "postprocess": 1.4587920159101486
+    }
+  },
+  {
+    "image_id": 67,
+    "elapsed_ms": 28.66971120238304,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2889150530099869,
+      "inference": 10.787084698677063,
+      "postprocess": 3.1391349621117115
+    }
+  },
+  {
+    "image_id": 68,
+    "elapsed_ms": 25.574837811291218,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.288844272494316,
+      "inference": 10.206844191998243,
+      "postprocess": 3.521351143717766
+    }
+  },
+  {
+    "image_id": 69,
+    "elapsed_ms": 28.204891830682755,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3199849054217339,
+      "inference": 10.232765693217516,
+      "postprocess": 4.511720966547728
+    }
+  },
+  {
+    "image_id": 70,
+    "elapsed_ms": 23.625948932021856,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2885341420769691,
+      "inference": 10.269756894558668,
+      "postprocess": 2.130869310349226
+    }
+  },
+  {
+    "image_id": 71,
+    "elapsed_ms": 28.0822548083961,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.280421856790781,
+      "inference": 11.080625001341105,
+      "postprocess": 3.9724912494421005
+    }
+  },
+  {
+    "image_id": 72,
+    "elapsed_ms": 108.78097033128142,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2102541513741016,
+      "inference": 92.71446615457535,
+      "postprocess": 5.112684797495604
+    }
+  },
+  {
+    "image_id": 73,
+    "elapsed_ms": 32.32185309752822,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.7261011525988579,
+      "inference": 10.483623016625643,
+      "postprocess": 7.45003018528223
+    }
+  },
+  {
+    "image_id": 74,
+    "elapsed_ms": 24.539695121347904,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2508570216596127,
+      "inference": 10.27405820786953,
+      "postprocess": 2.52063712105155
+    }
+  },
+  {
+    "image_id": 75,
+    "elapsed_ms": 26.666483376175165,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2148860841989517,
+      "inference": 10.00605383887887,
+      "postprocess": 3.6021871492266655
+    }
+  },
+  {
+    "image_id": 76,
+    "elapsed_ms": 25.760632008314133,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.20903505012393,
+      "inference": 10.082773864269257,
+      "postprocess": 5.095981061458588
+    }
+  },
+  {
+    "image_id": 77,
+    "elapsed_ms": 30.632650014013052,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2140600010752678,
+      "inference": 10.079913772642612,
+      "postprocess": 6.833971943706274
+    }
+  },
+  {
+    "image_id": 78,
+    "elapsed_ms": 29.241067823022604,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1944747529923916,
+      "inference": 10.125558357685804,
+      "postprocess": 8.10899306088686
+    }
+  },
+  {
+    "image_id": 79,
+    "elapsed_ms": 29.98861577361822,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2774080969393253,
+      "inference": 10.276820044964552,
+      "postprocess": 6.828614976257086
+    }
+  },
+  {
+    "image_id": 80,
+    "elapsed_ms": 23.087339010089636,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.221396028995514,
+      "inference": 10.156470816582441,
+      "postprocess": 2.3912633769214153
+    }
+  },
+  {
+    "image_id": 81,
+    "elapsed_ms": 28.21852406486869,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2316950596868992,
+      "inference": 10.147233959287405,
+      "postprocess": 4.843336995691061
+    }
+  },
+  {
+    "image_id": 82,
+    "elapsed_ms": 23.212250787764788,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1953702196478844,
+      "inference": 10.095530189573765,
+      "postprocess": 2.6817419566214085
+    }
+  },
+  {
+    "image_id": 83,
+    "elapsed_ms": 27.363500092178583,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2336908839643002,
+      "inference": 10.135121177881956,
+      "postprocess": 3.97665798664093
+    }
+  },
+  {
+    "image_id": 84,
+    "elapsed_ms": 23.38412217795849,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2274356558918953,
+      "inference": 10.07035980001092,
+      "postprocess": 2.8235004283487797
+    }
+  },
+  {
+    "image_id": 85,
+    "elapsed_ms": 24.89911625161767,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2052268721163273,
+      "inference": 10.026891715824604,
+      "postprocess": 2.2328239865601063
+    }
+  },
+  {
+    "image_id": 86,
+    "elapsed_ms": 26.45941125229001,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1952701024711132,
+      "inference": 10.059677064418793,
+      "postprocess": 5.342184100300074
+    }
+  },
+  {
+    "image_id": 87,
+    "elapsed_ms": 29.34093214571476,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.2390189804136753,
+      "inference": 10.223213117569685,
+      "postprocess": 5.335900001227856
+    }
+  },
+  {
+    "image_id": 88,
+    "elapsed_ms": 65.61755808070302,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.561855897307396,
+      "inference": 17.528607975691557,
+      "postprocess": 5.115935113281012
+    }
+  },
+  {
+    "image_id": 89,
+    "elapsed_ms": 64.00498887524009,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4353510923683643,
+      "inference": 10.323352180421352,
+      "postprocess": 6.187165156006813
+    }
+  },
+  {
+    "image_id": 90,
+    "elapsed_ms": 55.66093884408474,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3991957530379295,
+      "inference": 10.310796089470387,
+      "postprocess": 1.883836928755045
+    }
+  },
+  {
+    "image_id": 91,
+    "elapsed_ms": 59.48842689394951,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.373623963445425,
+      "inference": 10.155350901186466,
+      "postprocess": 5.149621982127428
+    }
+  },
+  {
+    "image_id": 92,
+    "elapsed_ms": 54.5971542596817,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3959230855107307,
+      "inference": 10.203315876424313,
+      "postprocess": 5.945068784058094
+    }
+  },
+  {
+    "image_id": 93,
+    "elapsed_ms": 59.130890760570765,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4314907602965832,
+      "inference": 10.316332802176476,
+      "postprocess": 4.574993159621954
+    }
+  },
+  {
+    "image_id": 94,
+    "elapsed_ms": 59.22844773158431,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4172722585499287,
+      "inference": 10.220748372375965,
+      "postprocess": 4.6614608727395535
+    }
+  },
+  {
+    "image_id": 95,
+    "elapsed_ms": 55.79459015280008,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4473111368715763,
+      "inference": 10.335715021938086,
+      "postprocess": 3.8165622390806675
+    }
+  },
+  {
+    "image_id": 96,
+    "elapsed_ms": 52.97307390719652,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4011110179126263,
+      "inference": 10.268545243889093,
+      "postprocess": 5.122414790093899
+    }
+  },
+  {
+    "image_id": 97,
+    "elapsed_ms": 56.08389899134636,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4129509218037128,
+      "inference": 10.363084264099598,
+      "postprocess": 5.73777174577117
+    }
+  },
+  {
+    "image_id": 98,
+    "elapsed_ms": 50.09562103077769,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4612618833780289,
+      "inference": 10.452506132423878,
+      "postprocess": 2.1210629492998123
+    }
+  },
+  {
+    "image_id": 99,
+    "elapsed_ms": 58.19141399115324,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4930698089301586,
+      "inference": 10.366850066930056,
+      "postprocess": 6.225699093192816
+    }
+  },
+  {
+    "image_id": 100,
+    "elapsed_ms": 61.034275218844414,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.430389005690813,
+      "inference": 10.379747953265905,
+      "postprocess": 11.22382516041398
+    }
+  },
+  {
+    "image_id": 101,
+    "elapsed_ms": 30.899793840944767,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0341629385948181,
+      "inference": 20.076103042811155,
+      "postprocess": 4.133495967835188
+    }
+  },
+  {
+    "image_id": 102,
+    "elapsed_ms": 21.839460358023643,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0220189578831196,
+      "inference": 10.050881654024124,
+      "postprocess": 5.22982981055975
+    }
+  },
+  {
+    "image_id": 103,
+    "elapsed_ms": 21.89859887585044,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9342711418867111,
+      "inference": 10.176942683756351,
+      "postprocess": 5.652587860822678
+    }
+  },
+  {
+    "image_id": 104,
+    "elapsed_ms": 33.329145051538944,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9802388958632946,
+      "inference": 17.432418186217546,
+      "postprocess": 10.113476309925318
+    }
+  },
+  {
+    "image_id": 105,
+    "elapsed_ms": 25.923172011971474,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9527420625090599,
+      "inference": 10.088079143315554,
+      "postprocess": 10.121786966919899
+    }
+  },
+  {
+    "image_id": 106,
+    "elapsed_ms": 62.17431137338281,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4831498265266418,
+      "inference": 10.854760184884071,
+      "postprocess": 5.033768247812986
+    }
+  },
+  {
+    "image_id": 107,
+    "elapsed_ms": 61.72484718263149,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.3951840810477734,
+      "inference": 10.283790994435549,
+      "postprocess": 5.297424271702766
+    }
+  },
+  {
+    "image_id": 108,
+    "elapsed_ms": 66.72162702307105,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4098002575337887,
+      "inference": 10.261425748467445,
+      "postprocess": 4.043250810354948
+    }
+  },
+  {
+    "image_id": 109,
+    "elapsed_ms": 63.80618317052722,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.488937996327877,
+      "inference": 10.481672827154398,
+      "postprocess": 7.927258033305407
+    }
+  },
+  {
+    "image_id": 110,
+    "elapsed_ms": 59.057723730802536,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.477726735174656,
+      "inference": 10.59996522963047,
+      "postprocess": 3.793471958488226
+    }
+  },
+  {
+    "image_id": 111,
+    "elapsed_ms": 24.595987983047962,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0619917884469032,
+      "inference": 11.063578072935343,
+      "postprocess": 5.753810983151197
+    }
+  },
+  {
+    "image_id": 112,
+    "elapsed_ms": 23.702836129814386,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1004707776010036,
+      "inference": 10.156549047678709,
+      "postprocess": 6.796088069677353
+    }
+  },
+  {
+    "image_id": 113,
+    "elapsed_ms": 22.038943599909544,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0761721059679985,
+      "inference": 10.206269100308418,
+      "postprocess": 5.150147248059511
+    }
+  },
+  {
+    "image_id": 114,
+    "elapsed_ms": 22.78793603181839,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.093490980565548,
+      "inference": 10.354908183217049,
+      "postprocess": 5.66669087857008
+    }
+  },
+  {
+    "image_id": 115,
+    "elapsed_ms": 26.511759962886572,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1006970889866352,
+      "inference": 10.898681823164225,
+      "postprocess": 9.24341194331646
+    }
+  },
+  {
+    "image_id": 116,
+    "elapsed_ms": 19.43300012499094,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0026157833635807,
+      "inference": 10.23680018261075,
+      "postprocess": 3.7312391214072704
+    }
+  },
+  {
+    "image_id": 117,
+    "elapsed_ms": 17.554991878569126,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.1156108230352402,
+      "inference": 10.105750057846308,
+      "postprocess": 1.5033199451863766
+    }
+  },
+  {
+    "image_id": 118,
+    "elapsed_ms": 19.494781736284494,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0123620741069317,
+      "inference": 10.674627032130957,
+      "postprocess": 2.246933989226818
+    }
+  },
+  {
+    "image_id": 119,
+    "elapsed_ms": 65.2145640924573,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.4830133877694607,
+      "inference": 10.902710258960724,
+      "postprocess": 10.730957146734
+    }
+  },
+  {
+    "image_id": 120,
+    "elapsed_ms": 23.111120332032442,
+    "ultralytics_speed_ms": {
+      "preprocess": 1.0036490857601166,
+      "inference": 10.74634911492467,
+      "postprocess": 6.750233005732298
+    }
+  },
+  {
+    "image_id": 121,
+    "elapsed_ms": 18.836774863302708,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9803958237171173,
+      "inference": 10.28803363442421,
+      "postprocess": 2.8787381015717983
+    }
+  },
+  {
+    "image_id": 122,
+    "elapsed_ms": 19.31162364780903,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9368048049509525,
+      "inference": 10.093507822602987,
+      "postprocess": 3.4676692448556423
+    }
+  },
+  {
+    "image_id": 123,
+    "elapsed_ms": 18.06547027081251,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9612208232283592,
+      "inference": 10.043054819107056,
+      "postprocess": 2.1982439793646336
+    }
+  },
+  {
+    "image_id": 124,
+    "elapsed_ms": 20.859846379607916,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9720232337713242,
+      "inference": 10.01243619248271,
+      "postprocess": 4.5068226754665375
+    }
+  },
+  {
+    "image_id": 125,
+    "elapsed_ms": 19.08646011725068,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.8944906294345856,
+      "inference": 9.957920294255018,
+      "postprocess": 3.418263979256153
+    }
+  },
+  {
+    "image_id": 126,
+    "elapsed_ms": 23.490858264267445,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9357170201838017,
+      "inference": 9.735632687807083,
+      "postprocess": 7.7238986268639565
+    }
+  },
+  {
+    "image_id": 127,
+    "elapsed_ms": 16.324691008776426,
+    "ultralytics_speed_ms": {
+      "preprocess": 0.9133052080869675,
+      "inference": 9.685629047453403,
+      "postprocess": 2.1236087195575237
+    }
+  }
+]

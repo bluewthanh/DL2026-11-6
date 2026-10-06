@@ -1,0 +1,47 @@
+{
+  "fraction": 0.05,
+  "seed": 1,
+  "images": 22,
+  "boxes_per_class": {
+    "fish": 177,
+    "jellyfish": 23,
+    "penguin": 26,
+    "puffin": 0,
+    "shark": 3,
+    "starfish": 7,
+    "stingray": 8
+  },
+  "images_per_class": {
+    "fish": 14,
+    "jellyfish": 3,
+    "penguin": 2,
+    "puffin": 0,
+    "shark": 3,
+    "starfish": 3,
+    "stingray": 5
+  },
+  "image_files": [
+    "IMG_2280_jpeg_jpg.rf.5acbcd33ac13045446a4b1241c986c99.jpg",
+    "IMG_2307_jpeg_jpg.rf.4ce514996d43504612622e577c4311ff.jpg",
+    "IMG_2315_jpeg_jpg.rf.4cf3c7f71327bd4856be12a71dbdb9ac.jpg",
+    "IMG_2374_jpeg_jpg.rf.7f7346c32c36fc46b7ef790fc9714ae0.jpg",
+    "IMG_2409_jpeg_jpg.rf.3ed500c7300670ac3db588700b23fd6d.jpg",
+    "IMG_2573_jpeg_jpg.rf.eeb6e6aa8d47ebf6bdda9490529cd3b5.jpg",
+    "IMG_2576_jpeg_jpg.rf.552199b4b64cdae74c6b4371f52fca1a.jpg",
+    "IMG_2585_jpeg_jpg.rf.9746986c05697d7543eb8c7fda1628c8.jpg",
+    "IMG_2595_jpeg_jpg.rf.4c1eb631d41b5335bff46c38fb9eca80.jpg",
+    "IMG_2654_jpeg_jpg.rf.d8cc4464a3fd05f617c4b5ae4033b5e0.jpg",
+    "IMG_3127_jpeg_jpg.rf.f655f50a69784a03deaa32876bb87ff3.jpg",
+    "IMG_3188_jpeg_jpg.rf.476cfe3f7643edf84ffd2f7fa65e6891.jpg",
+    "IMG_8410_jpg.rf.b81135d979a16079a0d8da0391dffe77.jpg",
+    "IMG_8424_jpg.rf.80e127433cf7f0a7c9c69cfe69c7e602.jpg",
+    "IMG_8443_jpg.rf.a48c760391248c7ceaf0bf5e75069cec.jpg",
+    "IMG_8450_jpg.rf.3517c972cf92bb662a45d2199dbf5b42.jpg",
+    "IMG_8451_jpg.rf.a48861bfca05ee6e15675e0a536cdbd3.jpg",
+    "IMG_8511_jpg.rf.326a734b4dfac56d84153df4cd419082.jpg",
+    "IMG_8512_MOV-4_jpg.rf.00fe2f21fd248137d764ab777f9fc43d.jpg",
+    "IMG_8547_jpg.rf.2c1f7270378486fc94864279735c1d13.jpg",
+    "IMG_8551_MOV-2_jpg.rf.d7f630ca69c6edf41db947b0784efd07.jpg",
+    "IMG_8590_MOV-1_jpg.rf.1c31f7d5ba0aa319b555fa973438b67c.jpg"
+  ]
+}

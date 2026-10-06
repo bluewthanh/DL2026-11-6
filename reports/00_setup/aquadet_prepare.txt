@@ -1,0 +1,5 @@
+[prepare] OK  view=data/aquarium-v2-yolo  coco=data/aquarium-v2-coco  link_mode=hardlink
+           train:  448 images,  3328 boxes
+           valid:  127 images,   909 boxes
+           test :   63 images,   582 boxes
+           omitted: 2 known zero-area boxes

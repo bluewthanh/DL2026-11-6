@@ -1,0 +1,41 @@
+{
+  "mode": "open-vocabulary text prompts",
+  "model": "yoloe-26s-seg.pt",
+  "prompts": [
+    "fish",
+    "sea jelly",
+    "penguin",
+    "puffin",
+    "shark",
+    "sea star",
+    "stingray"
+  ],
+  "image": "data/aquarium-v2-yolo/valid/images/IMG_2381_jpeg_jpg.rf.3ca566d8ba2b75d1a4fce2e4cee3f273.jpg",
+  "conf": 0.25,
+  "iou": 0.7,
+  "imgsz": 640,
+  "max_det": 300,
+  "agnostic_nms": false,
+  "detections": [
+    {
+      "label": "sea star",
+      "score": 0.584,
+      "xyxy": [
+        392.2,
+        865.2,
+        1091.6,
+        1574.1
+      ]
+    },
+    {
+      "label": "sea jelly",
+      "score": 0.4525,
+      "xyxy": [
+        392.0,
+        865.4,
+        1091.9,
+        1573.8
+      ]
+    }
+  ]
+}

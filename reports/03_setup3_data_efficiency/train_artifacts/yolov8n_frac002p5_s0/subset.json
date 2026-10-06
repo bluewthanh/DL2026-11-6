@@ -1,0 +1,36 @@
+{
+  "fraction": 0.025,
+  "seed": 0,
+  "images": 11,
+  "boxes_per_class": {
+    "fish": 44,
+    "jellyfish": 8,
+    "penguin": 2,
+    "puffin": 1,
+    "shark": 2,
+    "starfish": 2,
+    "stingray": 3
+  },
+  "images_per_class": {
+    "fish": 6,
+    "jellyfish": 1,
+    "penguin": 1,
+    "puffin": 1,
+    "shark": 2,
+    "starfish": 2,
+    "stingray": 3
+  },
+  "image_files": [
+    "IMG_2352_jpeg_jpg.rf.f4bbabd1732a415568aa268d5115bfcc.jpg",
+    "IMG_2360_jpeg_jpg.rf.2192cdae2ccfb3c16da6e67e0bb7929f.jpg",
+    "IMG_2390_jpeg_jpg.rf.5915fee19378c9e088d34df8ece6dea5.jpg",
+    "IMG_2436_jpeg_jpg.rf.40e581254b6407f8dfc89ce7f7c73164.jpg",
+    "IMG_2554_jpeg_jpg.rf.b9f8fec45282d0148c5c91c07dda5ad6.jpg",
+    "IMG_2564_jpeg_jpg.rf.be5afe0897d693709128f4ca7a208f61.jpg",
+    "IMG_2576_jpeg_jpg.rf.552199b4b64cdae74c6b4371f52fca1a.jpg",
+    "IMG_3128_jpeg_jpg.rf.c0f27342bb81a8e84b25c54e9713f545.jpg",
+    "IMG_3160_jpeg_jpg.rf.b08f98986cf243f815b95bc3033628c7.jpg",
+    "IMG_8382_jpg.rf.226852d807d635339458975055eee0d9.jpg",
+    "IMG_8419_jpg.rf.452440f1279e7cc825cb886380deadbf.jpg"
+  ]
+}

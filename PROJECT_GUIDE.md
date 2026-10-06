@@ -1,6 +1,6 @@
 # Project guide: lecturer requirements and submission checklist
 
-**Goal:** submit a complete project on **open-vocabulary object detection with text prompts**, not merely a three-model closed-set YOLO benchmark. This checklist combines the topic requirements and the submission/examination instructions supplied by the team. It records repository evidence, not proof that the report, slides or submission are finished.
+**Goal:** submit a complete project on **open-vocabulary object detection with text prompts**, not merely a closed-set YOLO benchmark. This checklist combines the topic requirements and the submission/examination instructions supplied by the team. It records repository evidence, not proof that the report, slides or submission are finished.
 
 **Legend:** `[x]` implemented/documented in the repository · `[~]` partial or needs independent verification · `[ ]` not completed/evidenced. Update a box only after checking its deliverable. The full lecturer brief takes precedence if it contains further requirements.
 
@@ -15,15 +15,15 @@
 
 ## 2. Report experiments: decide the comparison before deleting code
 
-The lecturer's report template explicitly calls for **Baseline Method, Main Method, Comparison Strategy**, and three setups. The brief does **not** say all three closed-set YOLO variants are mandatory. Choose and document these setups **before** removing the supplementary benchmark.
+The lecturer's report template explicitly calls for **Baseline Method, Main Method, Comparison Strategy**, and three setups. The brief does **not** require several closed-set YOLO variants; the project keeps one supervised baseline, YOLOv8n.
 
 | Report setup | Proposed experiment and current evidence | Status / decision needed |
 |---|---|---|
-| **Setup 1 — Baseline vs Main Model** | Main = text-prompted pretrained YOLOE. A completed fine-tuned YOLOv8n or YOLOv10n run could supply a closed-set contextual baseline; [`reports/benchmark.md`](reports/benchmark.md) contains their summaries. | `[~]` Define the exact baseline and compare on the **same validation split and AP evaluator**. Disclose that supervised fine-tuning and zero-shot inference are different regimes. Never place YOLOE **validation** AP beside YOLO **test** AP as a fair ranking. Decide whether one baseline suffices; do not assume three are required. |
+| **Setup 1 — Baseline vs Main Model** | Main = text-prompted pretrained YOLOE. Baseline = the fine-tuned closed-set YOLOv8n run; [`reports/benchmark.md`](reports/benchmark.md) contains its summary. | `[~]` Define the exact baseline and compare on the **same validation split and AP evaluator**. Disclose that supervised fine-tuning and zero-shot inference are different regimes. Never place YOLOE **validation** AP beside YOLO **test** AP as a fair ranking. |
 | **Setup 2 — Main research experiment** | YOLOE bare-name vs synonym vs description prompts on the same 127 validation images; overall and per-class AP in [`docs/open_vocab/YOLOE.md`](docs/open_vocab/YOLOE.md). | `[~]` Quantitative comparison done locally; independent review, visual evidence and interpretation remain. |
 | **Setup 3 — Analysis / Robustness / Ablation** | Candidate: a **separate, predeclared** focused experiment (e.g. change only one of the two real synonyms at a time while holding every other prompt fixed), with per-class AP and paired examples. | `[ ]` Agree on one feasible question and protocol, run it, interpret it. Do **not** merely rename Setup 2's existing table as Setup 3 or present unrun proposals as findings. |
 
-**Supplementary work already in Git:** YOLOv8n and YOLOv10n have completed 100-epoch seed-0 supervised runs ([v8 results](docs/yolo/YOLOV8N.md), [v10 results](docs/yolo/YOLOV10N.md)); YOLO11n only passed a one-epoch smoke pipeline. These detectors learn fixed Aquarium classes and do **not** satisfy the text-prompt requirement. Finishing YOLO11n is not on the critical path unless the team finds a specific course requirement for it. Archive/trim unused benchmark work only once the report's baseline and training-code needs are settled; coordinate with its contributors. Do not fabricate unrun comparisons.
+**Supplementary work already in Git:** YOLOv8n has a completed 100-epoch seed-0 supervised run ([results](docs/yolo/YOLOV8N.md)). It learns fixed Aquarium classes and does **not** satisfy the text-prompt requirement. Do not fabricate unrun comparisons.
 
 ## 3. Required repository and dataset deliverables
 
@@ -68,4 +68,4 @@ Use only results backed by scripts/documentation; do not present the historical 
 3. **Write and review the report** against every row in §4, especially comparison fairness, interpretation, limitations and contribution table.
 4. **Test a clean README reproduction** and resolve the processed-dataset link question without sharing restricted data.
 5. **Make and rehearse the four slides; prepare all members for Q&A; verify naming and submission.**
-6. Only after the report design is fixed, decide whether to archive/remove unused benchmark files. **Do not delay requirements-focused work to finish YOLO11n solely for symmetry.**
+6. Keep YOLOv8n as the only closed-set baseline; do not add further closed-set models unless the course requires them.

@@ -1,4 +1,4 @@
-# Shared protocol for every model. Do not edit for one model; use --set for ablations.
+# Fixed protocol for every run (all seeds and ablations). Do not edit casually; use --set for ablations.
 # Unlisted settings are Ultralytics defaults (saved per run in args.yaml).
 
 dataset:
@@ -10,7 +10,7 @@ dataset:
 
 train:
   epochs: 100
-  patience: 0            # no early stopping: same budget for every model
+  patience: 0            # no early stopping: same budget for every run
   imgsz: 640
   batch: 16
   optimizer: AdamW

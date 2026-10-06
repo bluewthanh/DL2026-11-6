@@ -1,0 +1,251 @@
+{
+  "mode": "closed-set (fixed trained classes)",
+  "model": "runs/yolov8n_e100_s0/weights/best.pt",
+  "classes": [
+    "fish",
+    "jellyfish",
+    "penguin",
+    "puffin",
+    "shark",
+    "starfish",
+    "stingray"
+  ],
+  "image": "data/aquarium-v2-yolo/valid/images/IMG_2325_jpeg_jpg.rf.728f2537a542aeb389e2d4edd2104df9.jpg",
+  "conf": 0.25,
+  "iou": 0.7,
+  "imgsz": 640,
+  "max_det": 300,
+  "agnostic_nms": false,
+  "detections": [
+    {
+      "label": "penguin",
+      "score": 0.8882,
+      "xyxy": [
+        575.3,
+        726.9,
+        740.7,
+        851.2
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.866,
+      "xyxy": [
+        421.9,
+        252.3,
+        535.1,
+        506.4
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.8419,
+      "xyxy": [
+        474.7,
+        922.0,
+        1139.4,
+        1167.6
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.7476,
+      "xyxy": [
+        0.2,
+        262.4,
+        55.3,
+        374.3
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.7418,
+      "xyxy": [
+        774.7,
+        270.9,
+        826.5,
+        358.1
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.6969,
+      "xyxy": [
+        230.3,
+        261.4,
+        312.7,
+        378.9
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.6595,
+      "xyxy": [
+        820.8,
+        270.3,
+        874.2,
+        364.1
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.6063,
+      "xyxy": [
+        1482.4,
+        347.4,
+        1536.0,
+        494.0
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.5992,
+      "xyxy": [
+        1286.0,
+        321.6,
+        1338.7,
+        382.7
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.5149,
+      "xyxy": [
+        315.7,
+        258.5,
+        371.6,
+        357.3
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.5078,
+      "xyxy": [
+        1065.9,
+        300.1,
+        1121.4,
+        368.8
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4803,
+      "xyxy": [
+        555.8,
+        243.7,
+        633.3,
+        387.2
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4456,
+      "xyxy": [
+        730.9,
+        278.9,
+        780.1,
+        358.0
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4335,
+      "xyxy": [
+        1290.7,
+        321.6,
+        1329.4,
+        379.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.4037,
+      "xyxy": [
+        614.9,
+        226.9,
+        678.8,
+        341.0
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3881,
+      "xyxy": [
+        1168.4,
+        320.6,
+        1233.3,
+        410.7
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3635,
+      "xyxy": [
+        1004.0,
+        302.9,
+        1051.1,
+        361.6
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3417,
+      "xyxy": [
+        611.4,
+        259.3,
+        716.3,
+        402.3
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3081,
+      "xyxy": [
+        866.1,
+        331.0,
+        921.7,
+        404.7
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3037,
+      "xyxy": [
+        635.4,
+        265.2,
+        712.3,
+        392.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.3024,
+      "xyxy": [
+        1172.0,
+        325.3,
+        1219.5,
+        407.9
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.2961,
+      "xyxy": [
+        176.8,
+        284.4,
+        224.7,
+        331.5
+      ]
+    },
+    {
+      "label": "penguin",
+      "score": 0.253,
+      "xyxy": [
+        73.5,
+        287.3,
+        158.7,
+        349.5
+      ]
+    }
+  ]
+}

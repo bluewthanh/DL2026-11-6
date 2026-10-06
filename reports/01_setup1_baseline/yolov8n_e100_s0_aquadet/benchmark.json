@@ -1,0 +1,97 @@
+{
+  "weights": "runs/yolov8n_e100_s0/weights/best.pt",
+  "settings": {
+    "imgsz": 640,
+    "batch": 1,
+    "conf": 0.25,
+    "iou": 0.7,
+    "max_det": 300,
+    "precisions": [
+      "fp32",
+      "fp16"
+    ],
+    "warmup": 30,
+    "images": 127,
+    "repeats": 3
+  },
+  "size": {
+    "params_M": 3.007,
+    "gflops": 8.09,
+    "weights_MB": 5.96
+  },
+  "environment_before": {
+    "python": "3.12.12",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "cudnn": 92400,
+    "ultralytics": "8.4.173",
+    "device": "NVIDIA GeForce RTX 3060",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3060",
+      "driver": "580.173.02",
+      "memory_used_mib": 7837,
+      "memory_total_mib": 12288,
+      "utilization_pct": 0
+    }
+  },
+  "latency_ms": {
+    "fp32": {
+      "preprocess": {
+        "mean": 1.173,
+        "median": 1.174,
+        "p90": 1.299,
+        "std": 0.132
+      },
+      "inference": {
+        "mean": 4.399,
+        "median": 4.332,
+        "p90": 4.688,
+        "std": 0.212
+      },
+      "postprocess": {
+        "mean": 0.79,
+        "median": 0.769,
+        "p90": 0.897,
+        "std": 0.08
+      },
+      "end_to_end": {
+        "mean": 6.566,
+        "median": 6.489,
+        "p90": 7.019,
+        "std": 0.332
+      },
+      "fps_end_to_end": 152.3,
+      "samples": 381
+    },
+    "fp16": {
+      "preprocess": {
+        "mean": 1.209,
+        "median": 1.203,
+        "p90": 1.394,
+        "std": 0.157
+      },
+      "inference": {
+        "mean": 4.887,
+        "median": 4.828,
+        "p90": 5.191,
+        "std": 0.59
+      },
+      "postprocess": {
+        "mean": 0.857,
+        "median": 0.863,
+        "p90": 0.95,
+        "std": 0.092
+      },
+      "end_to_end": {
+        "mean": 7.173,
+        "median": 7.12,
+        "p90": 7.711,
+        "std": 0.696
+      },
+      "fps_end_to_end": 139.4,
+      "samples": 381
+    }
+  }
+}

@@ -1,0 +1,22 @@
+test_mixed_devices_and_protocols_warn (test_aquadet.CompareTests.test_mixed_devices_and_protocols_warn) ... ok
+test_seeds_are_aggregated_and_best_is_bold (test_aquadet.CompareTests.test_seeds_are_aggregated_and_best_is_bold) ... ok
+test_every_model_config_loads_with_identical_protocol (test_aquadet.ConfigTests.test_every_model_config_loads_with_identical_protocol) ... ok
+test_override_parsing_and_validation (test_aquadet.ConfigTests.test_override_parsing_and_validation) ... ok
+test_seed_does_not_change_protocol_but_epochs_do (test_aquadet.ConfigTests.test_seed_does_not_change_protocol_but_epochs_do) ... ok
+test_smoke_is_named_and_flagged (test_aquadet.ConfigTests.test_smoke_is_named_and_flagged) ... ok
+test_latency_summary (test_aquadet.ConversionTests.test_latency_summary) ... ok
+test_xyxy_to_coco_xywh (test_aquadet.ConversionTests.test_xyxy_to_coco_xywh) ... ok
+test_only_exact_known_records_are_dropped (test_aquadet.DatasetPolicyTests.test_only_exact_known_records_are_dropped) ... ok
+test_unexpected_audit_findings_are_refused (test_aquadet.DatasetPolicyTests.test_unexpected_audit_findings_are_refused) ... ok
+test_all_sets_cover_same_categories_in_order (test_prompts.PromptStudyTests.test_all_sets_cover_same_categories_in_order) ... ok
+test_description_variant_changes_all_classes (test_prompts.PromptStudyTests.test_description_variant_changes_all_classes) ... ok
+test_synonym_variant_only_changes_documented_classes (test_prompts.PromptStudyTests.test_synonym_variant_only_changes_documented_classes) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.038s
+
+OK
+[compare] WARNING: Runs use 2 different protocols (p1, p2); AP is NOT directly comparable.
+[compare] WARNING: Latency was measured on different devices (GPU A, GPU B); re-run `python -m aquadet benchmark --run ...` for all runs on one GPU before comparing speed.
+[compare] wrote benchmark.md and reports/benchmark.csv (2 runs)
+[compare] wrote benchmark.md and reports/benchmark.csv (3 runs)
