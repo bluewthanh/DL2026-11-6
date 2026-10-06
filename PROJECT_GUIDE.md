@@ -21,9 +21,9 @@ Fine-tune three COCO-pretrained nano models on the *same* RF100 Aquarium v2 trai
 |---|---|---|
 | YOLOv8n | `configs/models/yolov8n.yaml` | Complete: 100 epochs, seed 0; see [results](docs/yolo/YOLOV8N.md) |
 | YOLO11n | `configs/models/yolo11n.yaml` | One-epoch smoke pipeline passed; full run pending |
-| YOLOv10n | `configs/models/yolov10n.yaml` | One-epoch smoke pipeline passed; full run pending |
+| YOLOv10n | `configs/models/yolov10n.yaml` | Complete: 100 epochs, seed 0; see [results](docs/yolo/YOLOV10N.md) |
 
-The [closed-set leaderboard](reports/benchmark.md) currently contains **only YOLOv8n**. There is no three-model ranking yet. Each model is initialized from its own COCO-pretrained checkpoint and fine-tuned on Aquarium training labels. Predictions are restricted to the dataset's seven learned classes; no inference-time text prompts or zero-shot claims apply. The YOLOE validation-only zero-shot results and fine-tuned YOLO test scores are **not a fair head-to-head ranking**: splits and training regimes differ.
+The [closed-set leaderboard](reports/benchmark.md) currently contains **YOLOv8n and YOLOv10n**. There is no three-model ranking yet. Each model is initialized from its own COCO-pretrained checkpoint and fine-tuned on Aquarium training labels. Predictions are restricted to the dataset's seven learned classes; no inference-time text prompts or zero-shot claims apply. The YOLOE validation-only zero-shot results and fine-tuned YOLO test scores are **not a fair head-to-head ranking**: splits and training regimes differ.
 
 ## Dataset and reproducibility
 
@@ -52,5 +52,5 @@ Benchmark size, GFLOPs and FP32/FP16 latency with warmed-up, in-memory, batch-1 
 
 1. Independently rerun and verify the YOLOE name/synonym/description study (generated artifacts are ignored and historical GPU artifacts are unavailable here); inspect overlays and document errors and per-class effects. Never tune prompts on test.
 2. If a held-out open-vocabulary test result is required, freeze prompts and evaluation settings on validation **first**, then implement/document an explicitly reviewed test protocol. The current YOLOE script intentionally refuses test inference.
-3. Finish YOLO11n and YOLOv10n full runs if time/resources allow; commit only their summaries and regenerate the supplementary leaderboard. Do not fabricate pending measurements or imply supervised test AP is directly comparable to zero-shot validation AP.
+3. Finish the YOLO11n full run if time/resources allow; commit its summary and regenerate the supplementary leaderboard. Do not fabricate pending measurements or imply supervised test AP is directly comparable to zero-shot validation AP.
 4. Confirm report format, roster and deadlines with staff. Include reproducible commands, limitations (one dataset, two real synonyms, test-label defects, different training regimes), measured results and a truthful Member Contribution table.
