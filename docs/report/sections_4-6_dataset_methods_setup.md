@@ -14,7 +14,7 @@ We use **Roboflow 100 Aquarium, version 2** (CC BY 4.0, https://universe.roboflo
 
 **Preparation.** We kept the original splits. Our scripts check the labels, convert them to COCO format and check the result again (`scripts/data/`).
 
-**Problems we found.** Two shark boxes in the test set have zero size. We left them out of the test labels and wrote this down in `DATA.md`. This does not affect any validation result.
+**Problems we found.** Two shark boxes in the test set have zero size. We removed these two boxes only from our converted test labels; the original files are unchanged (see `DATA.md`). This may slightly change the shark score on test. This does not affect any validation result.
 
 **What makes this dataset hard** (`scripts/analysis/gt_stats.py`):
 - **Imbalance:** half of the validation boxes are fish, but there are only 27 starfish and 33 stingrays.
@@ -23,7 +23,7 @@ We use **Roboflow 100 Aquarium, version 2** (CC BY 4.0, https://universe.roboflo
 
 ## 5. Methods
 
-**Main model: YOLOE-26s.** It is an open-vocabulary detector, so we can tell it which classes to look for as text, e.g. "fish, jellyfish, …". We did **not** train it on our data (zero-shot), which means it has never seen these images or labels.
+**Main model: YOLOE-26s.** It is an open-vocabulary detector, so we can tell it which classes to look for as text, e.g. "fish, jellyfish, …". We did **not** train it on our data (zero-shot). We cannot check whether these images were in its original training data.
 
 **Baseline: YOLOv8n.** A normal detector that we trained on the 448 training images. It can only find the 7 classes it was trained on and cannot take text.
 
@@ -38,7 +38,7 @@ Two rules keep it fair:
 **Common settings.**
 - Images resized to 640 px, score threshold 0.001, NMS IoU 0.7.
 - Main metric: COCO AP@[0.50:0.95], from pycocotools.
-- Everything ran on one RTX 3060 GPU, with one Python environment for each model.
+- The new experiments ran on one RTX 3060 GPU, with one Python environment for each model. The earlier CPU run was used only to check the GPU results.
 
 **Setup 1: baseline vs main model.**
 - YOLOE uses the plain class names as prompts.
@@ -52,11 +52,11 @@ Two rules keep it fair:
 | Synonyms | only jellyfish → `sea jelly` and starfish → `sea star` |
 | Descriptions | a short sentence for each class, e.g. "star-shaped sea animal with radiating arms" |
 
-We ran this twice, on CPU and on GPU. The results match to within 0.034 AP.
+We ran this twice, on CPU and on GPU. The results match to within 0.034 AP points (0–100 scale).
 
 **Setup 3: how much labelled data beats zero-shot?**
 - We train YOLOv8n on 10 %, 25 %, 50 % and 100 % of the training images, 3 seeds each.
 - We wrote the plan down before training (`reports/03_setup3_data_efficiency/PROTOCOL.md`).
-- Later we added 1 %, 2.5 % and 5 % to find the exact crossing point. These runs are reported separately.
+- Later we added 1 %, 2.5 % and 5 % to narrow down where YOLOv8n starts to beat YOLOE (between 22 and 45 images). These extra runs are reported separately.
 
 **Reproducibility.** All predictions are saved in `reports/`, so every table and figure can be rebuilt without running a model again. Training and scoring commands are in each folder's `README.md`.
