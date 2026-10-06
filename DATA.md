@@ -41,14 +41,14 @@ The [version-2 download page](https://universe.roboflow.com/roboflow-100/aquariu
 
 ## Reproducible YOLO export and local audit (pending access)
 
-**Chosen annotation export:** version 2, YOLOv8 format (YOLO TXT labels, `data.yaml`); this is **not** the detector model (the guide plans YOLOE-26s). [Official version-2 YOLOv8 download](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8). `scripts/prepare_data.py` downloads this exact workspace/project/version/format into `data/aquarium-qlnqy-v2-yolov8/` by default, or audits an existing export **in place** via `--source`, without re-splitting, moving, or editing dataset files. A COCO JSON export is separately available for later evaluation, but is not what this audit script downloads.
+**Chosen annotation export:** version 2, YOLOv8 format (YOLO TXT labels, `data.yaml`); this is **not** the detector model (the guide plans YOLOE-26s). [Official version-2 YOLOv8 download](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8). `scripts/data/prepare_data.py` downloads this exact workspace/project/version/format into `data/aquarium-qlnqy-v2-yolov8/` by default, or audits an existing export **in place** via `--source`, without re-splitting, moving, or editing dataset files. A COCO JSON export is separately available for later evaluation, but is not what this audit script downloads.
 
 ```bash
 python -m pip install roboflow PyYAML
 # Set ROBOFLOW_API_KEY in your local environment privately (do not put it in a command or tracked file).
-python scripts/prepare_data.py --download
+python scripts/data/prepare_data.py --download
 # Or, for an already downloaded YOLOv8 export (no key needed):
-python scripts/prepare_data.py --source /path/to/export-root
+python scripts/data/prepare_data.py --source /path/to/export-root
 ```
 
 The export root contains `data.yaml` and the original `train`, `valid` (or `val`), and `test` image/label directories. The audit accepts either `val` or `valid` as the YAML validation key, resolving the directory named by the YAML; it does not change the splits. It checks expected image counts; one-to-one image/label stem matching; missing images/labels; empty labels (reported separately, not automatically errors because negative images can be legitimate); normalized 5-field YOLO detection boxes; class-ID range; and the `data.yaml` ID-to-name mapping against all seven classes. It writes `data/aquarium-v2-audit.json` and exits nonzero when checks fail. Label files contain **YOLO normalized `[class_id, x_center, y_center, width, height]`**, not COCO pixel `xywh`. The audit does **not** repair or remove invalid annotations.
@@ -58,7 +58,7 @@ The export root contains `data.yaml` and the original `train`, `valid` (or `val`
 Run on the original export at `data/aquarium.v2-release.yolov8/` with:
 
 ```bash
-python scripts/prepare_data.py --source data/aquarium.v2-release.yolov8 --report data/aquarium-v2-audit.json
+python scripts/data/prepare_data.py --source data/aquarium.v2-release.yolov8 --report data/aquarium-v2-audit.json
 ```
 
 The export's `data.yaml` declares `train: ../train/images`, **`val: ../valid/images`**, `test: ../test/images`, `nc: 7`, and Roboflow metadata `workspace: roboflow-100`, `project: aquarium-qlnqy`, `version: 2`, `license: CC BY 4.0`. Actual ID mapping is **0 fish; 1 jellyfish; 2 penguin; 3 puffin; 4 shark; 5 starfish; 6 stingray**. This is *not* the order in the prompt table above.
@@ -82,22 +82,22 @@ Two **class 4 (`shark`) test labels** contain zero-width, zero-height boxes:
 
 ### Reproducible evaluation policy (original splits unchanged)
 
-Use `scripts/yolo_to_coco.py` to create **derived**, auditable COCO JSON ground truth. By default it runs the strict audit and **refuses all conversion** while invalid boxes remain. For this exact export, an *explicit opt-in* `--invalid-policy omit-known-zero-boxes` keeps **all original images in their original splits** and every valid annotation, and omits **only these two identified zero-area source records** from the derived COCO JSON. It refuses any new/different invalid record or audit error; it writes a manifest listing each omission and `source_audit_passed: false`. The original YOLO files remain untouched. File names in the COCO JSON are paths relative to the original export root; category IDs are COCO 1–7 corresponding to source YOLO IDs 0–6, not the prompt-table order. Boxes are pixel `[x, y, width, height]` and area is pixel². Do not change this rule between models or prompt variants. The policy affects **test ground truth only**; compare models on the same 63 test images and derived JSON, tune on the 127-image validation split, and report the two exclusions and possible shark-AP bias. If a lecturer requires a different treatment, decide and document it **before** test evaluation, then regenerate every model's evaluation with the same treatment.
+Use `scripts/data/yolo_to_coco.py` to create **derived**, auditable COCO JSON ground truth. By default it runs the strict audit and **refuses all conversion** while invalid boxes remain. For this exact export, an *explicit opt-in* `--invalid-policy omit-known-zero-boxes` keeps **all original images in their original splits** and every valid annotation, and omits **only these two identified zero-area source records** from the derived COCO JSON. It refuses any new/different invalid record or audit error; it writes a manifest listing each omission and `source_audit_passed: false`. The original YOLO files remain untouched. File names in the COCO JSON are paths relative to the original export root; category IDs are COCO 1–7 corresponding to source YOLO IDs 0–6, not the prompt-table order. Boxes are pixel `[x, y, width, height]` and area is pixel². Do not change this rule between models or prompt variants. The policy affects **test ground truth only**; compare models on the same 63 test images and derived JSON, tune on the 127-image validation split, and report the two exclusions and possible shark-AP bias. If a lecturer requires a different treatment, decide and document it **before** test evaluation, then regenerate every model's evaluation with the same treatment.
 
 ```bash
 python -m pip install PyYAML Pillow
 # Strict default refuses this export: no JSON written.
-python scripts/yolo_to_coco.py --source data/aquarium.v2-release.yolov8
+python scripts/data/yolo_to_coco.py --source data/aquarium.v2-release.yolov8
 # Explicit, reviewed policy; outputs data/aquarium-v2-coco/{train,valid,test}.json
 # and conversion_manifest.json. Use a fresh output directory for each regeneration.
-python scripts/yolo_to_coco.py --source data/aquarium.v2-release.yolov8 --invalid-policy omit-known-zero-boxes
+python scripts/data/yolo_to_coco.py --source data/aquarium.v2-release.yolov8 --invalid-policy omit-known-zero-boxes
 ```
 
 Conversion performed locally with this policy: **448 train images / 3328 boxes**, **127 valid images / 909 boxes**, **63 test images / 582 valid boxes**. `data/aquarium-v2-coco/conversion_manifest.json` lists the two excluded zero-area test records. **Derived COCO validation passed** using `pycocotools 2.0.11` in the local Python 3.14 environment (Windows): all three JSON files load with `COCO`, have unique image/annotation IDs, the expected seven category ID/name pairs, valid positive in-image bboxes and matching positive areas, and no orphan annotations. This validates the *derived JSON*, not the original YOLO labels: the source audit still fails due to the two omitted zero-area shark boxes. No model evaluation has been run.
 
 ```bash
 python -m pip install pycocotools
-python scripts/validate_coco.py --coco-dir data/aquarium-v2-coco
+python scripts/data/validate_coco.py --coco-dir data/aquarium-v2-coco
 # PASS train: 448 images, 3328 annotations
 # PASS valid: 127 images, 909 annotations
 # PASS test:   63 images,  582 annotations

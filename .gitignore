@@ -12,3 +12,10 @@ results/
 
 /aquarium.v2-release.yolov8/
 *.crdownload
+
+# Closed-set YOLO benchmark (aquadet)
+/dataset/
+/runs/
+/.venv/
+/.ultralytics/
+# reports/runs/*.json and reports/benchmark.{md,csv} ARE tracked on purpose

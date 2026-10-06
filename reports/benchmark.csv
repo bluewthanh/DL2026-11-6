@@ -1,0 +1,2 @@
+run,model,seed,epochs,protocol_hash,Params (M),GFLOPs,Val AP,Val AP50,Test AP,Test AP50,Test AP75,FP32 infer (ms),FP16 infer (ms),FP16 post (ms),FP16 end-to-end (ms),Train (min),Test AP fish,Test AP jellyfish,Test AP penguin,Test AP puffin,Test AP shark,Test AP starfish,Test AP stingray,device,ultralytics,torch
+yolov8n_e100_s0,yolov8n,0,100,42534e32b914,3.007,8.09,45.3723,75.8353,47.6388,76.1128,54.2991,4.399,4.887,0.857,7.173,5.2383,41.8252,57.3802,31.6155,22.4137,56.5063,59.695,64.0357,NVIDIA GeForce RTX 3060,8.4.173,2.14.1+cu130

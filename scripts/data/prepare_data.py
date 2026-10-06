@@ -1,7 +1,7 @@
 """Download and audit RF100 Aquarium v2 YOLOv8 export without changing its splits.
 
 Requires PyYAML; downloading additionally requires roboflow and ROBOFLOW_API_KEY.
-Run `python scripts/prepare_data.py --help` for usage.
+Run `python scripts/data/prepare_data.py --help` for usage.
 """
 
 import argparse
@@ -140,8 +140,7 @@ def verify(root: Path) -> dict:
     if "val" in config and "valid" in config:
         errors.append("data.yaml declares both val and valid; choose exactly one validation key")
     for split, expected in EXPECTED_COUNTS.items():
-        # Accept both validation key spellings and both on-disk folder spellings.
-        # Resolve only against the original export root; never move or edit files.
+        # Accept both val/valid spellings, in data.yaml and on disk.
         yaml_key = "val" if split == "valid" and "val" in config else split
         declared = config.get(yaml_key)
         directory_name = split

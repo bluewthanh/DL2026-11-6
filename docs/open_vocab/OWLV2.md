@@ -5,7 +5,7 @@
 ## Model and protocol
 
 - Hugging Face [`google/owlv2-base-patch16-ensemble`](https://huggingface.co/google/owlv2-base-patch16-ensemble), revision **`cfd3195ba4ea9592eec887ded089f4c08eff231d`**, pretrained `model.safetensors`, not fine-tuned. The revision is passed to both processor and model loaders, so they use the same frozen model snapshot. Download/cache contents stay untracked. Source: [official model card](https://huggingface.co/google/owlv2-base-patch16-ensemble) and [Transformers OWLv2 API](https://huggingface.co/docs/transformers/model_doc/owlv2).
-- `scripts/run_owlv2.py` queries the seven **bare class names** in the order and ID mapping checked against `scripts/aquarium_prompts.json` and validated COCO categories. Hugging Face query labels 0–6 map to COCO category IDs 1–7. One best query per model image patch is returned by HF text-query post-processing (no additional NMS). The default score floor is 0.001; boxes are rescaled to the **original** height/width, clamped to image bounds, converted from xyxy to pixel xywh, sorted by score and limited to 300/image. COCOeval bbox uses its default maxDets **100**, IoU 0.50:0.95, area all. This is the same ID set, 127 validation images and COCO evaluator as YOLOE, though each model has its own architecture and postprocessing.
+- `scripts/open_vocab/run_owlv2.py` queries the seven **bare class names** in the order and ID mapping checked against `scripts/open_vocab/aquarium_prompts.json` and validated COCO categories. Hugging Face query labels 0–6 map to COCO category IDs 1–7. One best query per model image patch is returned by HF text-query post-processing (no additional NMS). The default score floor is 0.001; boxes are rescaled to the **original** height/width, clamped to image bounds, converted from xyxy to pixel xywh, sorted by score and limited to 300/image. COCOeval bbox uses its default maxDets **100**, IoU 0.50:0.95, area all. This is the same ID set, 127 validation images and COCO evaluator as YOLOE, though each model has its own architecture and postprocessing.
 - `--limit` evaluates the first N **sorted image IDs**, not a random sample. Subset AP is diagnostic, **not** the full-validation AP. The script refuses `test.json` by requiring `valid.json` and validating the expected **127 images / 909 annotations**; it never writes into `data/`. Each run needs a new ignored `results/` directory and saves `config.json`, `predictions.json`, `metrics.json` and `runtime.json`. Wall time per image includes image loading, preprocessing, inference, postprocessing and Python overhead; it is **not** a comparable GPU latency benchmark. Use workstream 4's single-GPU protocol for model-to-model speed comparisons.
 
 ## Setup and exact run commands (pending execution)
@@ -16,17 +16,17 @@ This local run used Windows, Python 3.13, torch==2.6.0+cpu, transformers==4.48.3
 py -3.13 -m pip install 'torch==2.6.0' 'transformers==4.48.3' 'pycocotools==2.0.11' 'Pillow==11.1.0' 'PyYAML==6.0.2' 'safetensors==0.5.2'
 # The YOLOv8 export was supplied at the repository root (train/, valid/, test/, data.yaml).
 # Conversion requires output OUTSIDE the export root. Only after success, move to the ignored data/ directory:
-py -3.13 scripts/yolo_to_coco.py --source . --output ../owlv2-derived-coco-temp --invalid-policy omit-known-zero-boxes
+py -3.13 scripts/data/yolo_to_coco.py --source . --output ../owlv2-derived-coco-temp --invalid-policy omit-known-zero-boxes
 mkdir -p data
 mv ../owlv2-derived-coco-temp data/aquarium-v2-coco
-py -3.13 scripts/validate_coco.py --coco-dir data/aquarium-v2-coco
-py -3.13 -m unittest discover -s scripts -p 'test_run_owlv2.py'
+py -3.13 scripts/data/validate_coco.py --coco-dir data/aquarium-v2-coco
+py -3.13 -m unittest discover -s scripts/open_vocab -p 'test_run_owlv2.py'
 # Download the model card's revision cfd3195ba4ea9592eec887ded089f4c08eff231d
 # to weights/owlv2-base-patch16-ensemble (model.safetensors and processor/tokenizer files).
 # Verify model.safetensors SHA-256 above. The snapshot is ignored by Git.
-py -3.13 scripts/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --limit 1 --output results/owlv2_valid_1
-py -3.13 scripts/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --limit 10 --output results/owlv2_valid_10
-py -3.13 scripts/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --output results/owlv2_valid_full
+py -3.13 scripts/open_vocab/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --limit 1 --output results/owlv2_valid_1
+py -3.13 scripts/open_vocab/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --limit 10 --output results/owlv2_valid_10
+py -3.13 scripts/open_vocab/run_owlv2.py --source . --model-dir weights/owlv2-base-patch16-ensemble --output results/owlv2_valid_full
 # Without --model-dir, the script downloads the pinned revision via Hugging Face.
 # Use a NEW --output path for reruns. CUDA: --device cuda:0; record that environment separately.
 ```

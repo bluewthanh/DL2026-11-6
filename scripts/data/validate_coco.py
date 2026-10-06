@@ -1,6 +1,6 @@
 """Validate the derived Aquarium v2 COCO ground truth without editing any files.
 
-Run: python scripts/validate_coco.py --coco-dir data/aquarium-v2-coco
+Run: python scripts/data/validate_coco.py --coco-dir data/aquarium-v2-coco
 Requires: python -m pip install pycocotools
 """
 

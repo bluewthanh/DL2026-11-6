@@ -1,6 +1,6 @@
 # Project plan: Open-Vocabulary Object Detection with Text Prompts
 
-Project 6 · Working plan originally drafted 4 Oct 2026. This document records the team's proposed scope and submission checklist; **it is not evidence that every planned experiment was completed**. See [README.md](README.md) for reproducible commands, [DATA.md](DATA.md) for dataset decisions, and [EXPERIMENTS.md](EXPERIMENTS.md) for runs actually performed. Confirm administrative details and the course's official instructions with the teaching staff.
+Project 6 · Working plan originally drafted 4 Oct 2026. This document records the team's proposed scope and submission checklist; **it is not evidence that every planned experiment was completed**. See [README.md](README.md) for reproducible commands, [DATA.md](DATA.md) for dataset decisions, and [docs/open_vocab/YOLOE.md](docs/open_vocab/YOLOE.md) for runs actually performed. Confirm administrative details and the course's official instructions with the teaching staff.
 
 **Current repository status:** Aquarium v2 preparation and derived COCO validation are complete. A pretrained YOLOE-26s bare-name baseline was evaluated on the validation split using a local CPU. Visual checks, prompt variants, the other model families, comparable GPU latency, and held-out test evaluation remain planned, not completed. The original source has two invalid test annotations; see DATA.md.
 
@@ -66,7 +66,7 @@ Each member must run this pipeline and explain where prompts are consumed, how l
 
 ## 4. Dataset
 
-The selected dataset is Roboflow 100 Aquarium (`aquarium-qlnqy`, version 2). Its published train/valid/test split is preserved. [`DATA.md`](DATA.md) documents the source, annotation audit, derived COCO conversion, class mapping and the two omitted zero-area test records. `scripts/prepare_data.py` audits or downloads the source export, `scripts/yolo_to_coco.py` creates derived JSON, and `scripts/validate_coco.py` checks it with pycocotools. The source itself is not repaired.
+The selected dataset is Roboflow 100 Aquarium (`aquarium-qlnqy`, version 2). Its published train/valid/test split is preserved. [`DATA.md`](DATA.md) documents the source, annotation audit, derived COCO conversion, class mapping and the two omitted zero-area test records. `scripts/data/prepare_data.py` audits or downloads the source export, `scripts/data/yolo_to_coco.py` creates derived JSON, and `scripts/data/validate_coco.py` checks it with pycocotools. The source itself is not repaired.
 
 ## 5. Evaluation protocol (planned comparisons)
 
@@ -98,7 +98,7 @@ The selected dataset is Roboflow 100 Aquarium (`aquarium-qlnqy`, version 2). Its
 
 ## 6. Repository layout and tools
 
-Current tracked files include `README.md`, `DATA.md`, `EXPERIMENTS.md`, `PROJECT_GUIDE.md` and the data-preparation and YOLOE baseline scripts under `scripts/`. Datasets, model assets and run outputs are ignored by Git. The following interface is **proposed for future multi-model comparisons**; it has not been implemented:
+The current layout is shown in [README.md](README.md#repository-layout): dataset tools in `scripts/data/`, open-vocabulary runs in `scripts/open_vocab/` with docs in `docs/open_vocab/`, and the closed-set YOLO benchmark in `aquadet/` + `configs/` with docs in `docs/yolo/`. Datasets, model assets and run outputs are ignored by Git. The following interface is **proposed for future multi-model comparisons**; it has not been implemented:
 
 ```python
 class OVDetector:
@@ -127,7 +127,7 @@ The assignments below are from the planning draft, **not verified records of who
 
 ## 8. Original three-day work schedule (historical plan)
 
-The table below records the original target schedule, **not a log of completed work or proof of submission**. Consult the README and EXPERIMENTS.md for current status. Confirm deadlines separately with the course staff.
+The table below records the original target schedule, **not a log of completed work or proof of submission**. Consult the README and docs/open_vocab/YOLOE.md for current status. Confirm deadlines separately with the course staff.
 
 | When | Task | Who |
 |---|---|---|

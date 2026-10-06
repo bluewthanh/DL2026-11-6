@@ -16,14 +16,14 @@ python -m pip install ultralytics==8.4.172 pycocotools==2.0.11
 python -m pip install 'git+https://github.com/ultralytics/CLIP.git@a13192f8cb767260d7dfd98c843b0716593169e7'
 # Download the two URLs above to weights/yoloe-26s-seg.pt and
 # weights/mobileclip2_b.ts respectively (Ultralytics weights directory).
-python scripts/validate_coco.py --coco-dir data/aquarium-v2-coco
-python scripts/run_yoloe_baseline.py --output results/yoloe26s_valid_bare_final
+python scripts/data/validate_coco.py --coco-dir data/aquarium-v2-coco
+python scripts/open_vocab/run_yoloe_baseline.py --output results/yoloe26s_valid_bare_final
 # Optional diagnostic only: --limit 1 --output results/new_smoke_path
 ```
 
 The script refuses `test.json`, validates the `valid.json` counts/categories, sorts validation image IDs, maps prompt index 0–6 to COCO ID 1–7, converts pixel xyxy boxes to COCO pixel xywh, and evaluates all 127 images with `pycocotools` COCOeval bbox. It saves `config.json` (prompt mapping/vocabularies, checkpoint and input hashes, environment/settings), `predictions.json` (COCO image/category/bbox/**score**), `runtime.json` (per-image timings), and `metrics.json` to a new ignored output folder; it never writes into dataset folders. Default inference: `imgsz=640`, `conf=0.001` (low fixed cutoff to preserve AP ranking), NMS IoU 0.7, `agnostic_nms=False`, `max_det=300`, batch 1, no augmentation, CPU float32. COCOeval uses IoU 0.50:0.95, area all, and default maxDets 100; model max_det and evaluator maxDets are distinct. Per-image wall time includes preprocessing, inference, postprocessing and Python overhead; not GPU latency. CPU is slow and timings are not comparable to a T4 run.
 
-The baseline prompt list and **separate prompt-study** prompt study vocabularies are versioned in `scripts/aquarium_prompts.json`. Only `sea jelly` for jellyfish and `sea star` for starfish are defensible synonyms; the other five entries in the synonym variant remain **unchanged**. Descriptions are proposed visual phrases, not synonyms. Category IDs are the actual derived COCO IDs, not the order in the prompt table. No prompt variant was used for these baseline metrics.
+The baseline prompt list and **separate prompt-study** prompt study vocabularies are versioned in `scripts/open_vocab/aquarium_prompts.json`. Only `sea jelly` for jellyfish and `sea star` for starfish are defensible synonyms; the other five entries in the synonym variant remain **unchanged**. Descriptions are proposed visual phrases, not synonyms. Category IDs are the actual derived COCO IDs, not the order in the prompt table. No prompt variant was used for these baseline metrics.
 
 ## Validation results (full 127-image bare-name run; `results/yoloe26s_valid_bare_final/`)
 
@@ -87,9 +87,9 @@ PowerShell commands below assume the export is at
 Each output directory must be new.
 
 ```powershell
-python scripts/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set bare --device cuda:0 --output .\results\yoloe26s_valid_bare_gpu
-python scripts/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set synonym --device cuda:0 --output .\results\yoloe26s_valid_synonym_gpu
-python scripts/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set description --device cuda:0 --output .\results\yoloe26s_valid_description_gpu
+python scripts/open_vocab/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set bare --device cuda:0 --output .\results\yoloe26s_valid_bare_gpu
+python scripts/open_vocab/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set synonym --device cuda:0 --output .\results\yoloe26s_valid_synonym_gpu
+python scripts/open_vocab/run_yoloe_baseline.py --checkpoint .\weights\yoloe-26s-seg.pt --coco .\data\aquarium-v2-coco\valid.json --source .\aquarium.v2-release.yolov8 --prompt-set description --device cuda:0 --output .\results\yoloe26s_valid_description_gpu
 ```
 
 Each run saves config.json, metrics.json, predictions.json and runtime.json

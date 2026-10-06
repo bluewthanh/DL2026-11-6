@@ -1,6 +1,6 @@
 """Zero-shot OWLv2 Aquarium v2 validation, using the shared COCO bbox protocol.
 
-See OWLV2.md for a pinned checkpoint, installation and reproduction commands.
+See docs/open_vocab/OWLV2.md for a pinned checkpoint, installation and reproduction commands.
 Only valid.json is accepted; --limit 1/10 provides diagnostic subset runs.
 """
 
@@ -13,6 +13,8 @@ import sys
 import time
 from pathlib import Path
 
+# validate_coco is in scripts/data/.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
 from validate_coco import CATEGORIES, validate
 
 
