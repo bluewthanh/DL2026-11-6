@@ -104,7 +104,7 @@ class CompareTests(unittest.TestCase):
                     patch.object(report, "ROOT", tmp):
                 path = report.compare()
             self.assertTrue((tmp / "benchmark.csv").is_file())
-            return path.read_text()
+            return path.read_text(encoding="utf-8")
 
     def test_seeds_are_aggregated_and_best_is_bold(self):
         text = self.run_compare([fake_summary("yolov8n", 0, 0.40), fake_summary("yolov8n", 1, 0.50),

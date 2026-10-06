@@ -8,6 +8,12 @@
 - **Task:** object detection (bounding boxes).
 - **License shown on the Roboflow Universe project page:** CC BY 4.0. See the [version-2 page](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2) and [CC BY 4.0 terms](https://creativecommons.org/licenses/by/4.0/). Credit Roboflow 100 and check attribution for any redistributed material.
 
+## Downloadable processed annotations (no images)
+
+The group also distributes its **derived COCO train/valid/test annotations** as a small [downloadable ZIP](https://github.com/bluewthanh/DL2026-11-6/releases/download/aquarium-v2-derived-coco-v1/aquarium-v2-derived-coco.zip) (SHA-256 `1a30695ce8b6ee475f195ba3f0a9e8eb300b2da8baf7946749295e8c56cfe0ea`). This is a **processed annotations-only** derivative of the official Aquarium v2 YOLOv8 export: it includes `train.json`, `valid.json`, `test.json`, a portable omission-policy manifest and attribution notice. It contains **no images, original YOLO label files, weights, keys or machine-specific paths**. Download the original images separately from the [official version-2 dataset](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8). Keep the extracted `*.json` under `data/aquarium-v2-coco/` and the original export at `data/aquarium.v2-release.yolov8/`: COCO `images[].file_name` is relative to that original export root. Check the ZIP hash before use, then run `python scripts/data/validate_coco.py --coco-dir data/aquarium-v2-coco`.
+
+To **regenerate** instead of downloading, use the conversion command in the reproduction policy below, and then validate. `scripts/data/package_derived_coco.py` builds the same portable ZIP from validated local COCO JSON and strips absolute paths from its manifest. Do not equate the two omitted test shark boxes with a repaired source dataset; this derivative documents their omission. Roboflow 100 Aquarium v2 is credited under the CC BY 4.0 license shown by its official project/export, with [license terms](https://creativecommons.org/licenses/by/4.0/); keep the attribution and change notice when reusing the derivative.
+
 ## Images and original splits
 
 | Split | Images |
