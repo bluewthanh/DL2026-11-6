@@ -6,7 +6,7 @@ This workstream fine-tunes three COCO-pretrained **closed-set** nano detectors o
 |---|---|---|---|
 | YOLOv8n | `configs/models/yolov8n.yaml` | _fill in_ | done, see [`YOLOV8N.md`](YOLOV8N.md) |
 | YOLO11n | `configs/models/yolo11n.yaml` | _fill in_ | pipeline smoke-tested, full run pending |
-| YOLOv10n | `configs/models/yolov10n.yaml` | _fill in_ | pipeline smoke-tested, full run pending |
+| YOLOv10n | `configs/models/yolov10n.yaml` | Le Minh | done, see [`YOLOV10N.md`](YOLOV10N.md) |
 
 ## 1. Setup (once per machine)
 
@@ -103,6 +103,6 @@ Each model has its own results file in this folder, named after the model, so ow
 |---|---|
 | YOLOv8n | [`YOLOV8N.md`](YOLOV8N.md) |
 | YOLO11n | `YOLO11N.md` (to be added; copy the structure of `YOLOV8N.md`) |
-| YOLOv10n | `YOLOV10N.md` (to be added; copy the structure of `YOLOV8N.md`) |
+| YOLOv10n | [`YOLOV10N.md`](YOLOV10N.md) |
 
 Cross-model interpretation will be added here once all three models are in.
