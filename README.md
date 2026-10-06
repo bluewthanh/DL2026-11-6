@@ -43,15 +43,15 @@ DL2026-11-6/
 
 ## Primary experiment: names, synonyms and descriptions
 
-Reproduce the [YOLOE-26s prompt study](docs/open_vocab/YOLOE.md) in a **separate** Python 3.12 environment. For the exact GPU environment used for the saved results, see [reports/00_setup/README.md](reports/00_setup/README.md) (Ultralytics 8.4.172, pycocotools 2.0.11, pinned Ultralytics/CLIP). One installation route (bash; use `.venv-yoloe\Scripts\python.exe` on Windows instead of `.venv-yoloe/bin/python`):
+Reproduce the [YOLOE-26s prompt study](docs/open_vocab/YOLOE.md) in a **separate** Python 3.12 environment. For the exact GPU environment used for the saved results, see [reports/00_setup/README.md](reports/00_setup/README.md) (Ultralytics 8.4.172, pycocotools 2.0.11, pinned Ultralytics/CLIP). One installation route (bash; install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) first):
 
 ```bash
 uv venv .venv-yoloe --python 3.12 --managed-python
 uv pip install --python .venv-yoloe/bin/python torch==2.14.1 torchvision==0.29.1 ultralytics==8.4.172 pycocotools==2.0.11 'git+https://github.com/ultralytics/CLIP.git@a13192f8cb767260d7dfd98c843b0716593169e7'
-source .venv-yoloe/bin/activate  # Windows PowerShell: .venv-yoloe\Scripts\Activate.ps1
+source .venv-yoloe/bin/activate
 ```
 
-Install a CUDA-enabled PyTorch build compatible with your hardware if using GPU; the saved run's full environment is in `reports/00_setup/`. Download the text-promptable `yoloe-26s-seg.pt` and MobileCLIP2 encoder to `weights/` from the trusted links in [YOLOE.md](docs/open_vocab/YOLOE.md); check both SHA-256 hashes. Do **not** use the `-pf` checkpoint. The YOLO benchmark environment below uses a different Ultralytics version. Only jellyfish and starfish change in the synonym variant of [`aquarium_prompts.json`](scripts/open_vocab/aquarium_prompts.json).
+On Windows, replace `.venv-yoloe/bin/python` above with `.venv-yoloe/Scripts/python.exe`, and activate with `.venv-yoloe\Scripts\Activate.ps1` in PowerShell (or `.venv-yoloe/Scripts/activate` in Git Bash). Install a CUDA-enabled PyTorch build compatible with your hardware if using GPU; the saved run's full environment is in `reports/00_setup/`. Download the text-promptable `yoloe-26s-seg.pt` and MobileCLIP2 encoder to `weights/` from the trusted links in [YOLOE.md](docs/open_vocab/YOLOE.md); check both SHA-256 hashes. Do **not** use the `-pf` checkpoint. The YOLO benchmark environment below uses a different Ultralytics version. Only jellyfish and starfish change in the synonym variant of [`aquarium_prompts.json`](scripts/open_vocab/aquarium_prompts.json).
 
 Put the original Aquarium v2 YOLOv8 export at `data/aquarium.v2-release.yolov8/` (see [DATA.md](DATA.md)). The **derived annotations-only COCO ZIP** is [downloadable separately](https://github.com/bluewthanh/DL2026-11-6/releases/download/aquarium-v2-derived-coco-v1/aquarium-v2-derived-coco.zip); it does not contain images. Extract it so `train.json`, `valid.json` and `test.json` are under `data/aquarium-v2-coco/`, or regenerate the **same** derived ground truth from the original export (install `Pillow` and `PyYAML` in the conversion environment):
 
@@ -84,9 +84,9 @@ python -m aquadet env
 python -m unittest discover -s tests
 ```
 
-For the full **closed-set** setup, supported overrides, hardware/latency rules and evaluation protocol, read [docs/yolo/README.md](docs/yolo/README.md). If you do not use `uv`, create a Python 3.12 venv, install the appropriate PyTorch build for your hardware and then `pip install -r requirements-yolo.txt`. The saved GPU experiments were run with separate Python 3.12 environments (see `reports/00_setup/`); this checkout's unit tests and a **one-image YOLOE smoke inference** passed on Windows/Python 3.14 CPU, not a clean second-machine reproduction of the full runs.
+For the full **closed-set** setup, supported overrides, hardware/latency rules and evaluation protocol, read [docs/yolo/README.md](docs/yolo/README.md). If you do not use `uv`, create a Python 3.12 venv, install the appropriate PyTorch build for your hardware and then `pip install -r requirements-yolo.txt`. The saved GPU experiments were run with separate Python 3.12 environments (see `reports/00_setup/`). A [fresh-environment Windows CPU walkthrough](reports/REPRODUCTION_CHECK.md) verified full YOLOE validation runs, a one-epoch YOLOv8n training/evaluation smoke pipeline, data conversion, unit tests and demo; it did **not** retrain YOLOv8n for 100 epochs or reproduce GPU latency.
 
-1. Obtain the unmodified [Roboflow 100 Aquarium v2 YOLOv8-format **annotation export**](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8) and put its `data.yaml`, `train/`, `valid/` and `test/` at `dataset/aquarium.v2-release.yolov8/` (or pass `--source PATH` / set `AQUADET_SOURCE`). The YOLOv8 **export format** is not a restriction on which of the three detectors can be trained. The published 448/127/63 image splits are preserved.
+1. Obtain the unmodified [Roboflow 100 Aquarium v2 YOLOv8-format **annotation export**](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8) and put its `data.yaml`, `train/`, `valid/` and `test/` at `dataset/aquarium.v2-release.yolov8/` (or pass `--source PATH` / set `AQUADET_SOURCE`). For one shared export across both model environments, put it at `data/aquarium.v2-release.yolov8/` instead and pass `--source data/aquarium.v2-release.yolov8` to each `aquadet prepare/run` command. The YOLOv8 **export format** is not a restriction on which of the three detectors can be trained. The published 448/127/63 image splits are preserved.
 2. Prepare derived data, then run a smoke test before committing to a full run:
 
 ```bash
