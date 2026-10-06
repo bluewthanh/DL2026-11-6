@@ -1,6 +1,6 @@
 # Closed-set YOLO benchmark: YOLOv8n vs YOLO11n vs YOLOv10n
 
-This workstream fine-tunes three COCO-pretrained **closed-set** nano detectors on RF100 Aquarium v2 and compares their accuracy, size and speed under one shared protocol. It is separate from the open-vocabulary study (YOLOE / OWLv2, see `docs/open_vocab/YOLOE.md`, `docs/open_vocab/OWLV2.md`). The two studies share the dataset, the test-label policy and the COCO evaluator, so their AP numbers sit on the same scale. The supervised models here, however, **are trained on the train split**, while the open-vocabulary models are zero-shot.
+This benchmark fine-tunes three COCO-pretrained **closed-set** nano detectors on RF100 Aquarium v2 and compares their accuracy, size and speed under one shared protocol. All three train on the same training split and use the same derived evaluation ground truth. They do **not** support text-prompted or zero-shot detection; confirm with course staff whether this revised scope meets the original project brief.
 
 | Model | Config | Owner | Status |
 |---|---|---|---|
@@ -61,7 +61,7 @@ Model configs only name the checkpoint. **Everything else is shared**, and `comp
 
 **Two scorers, on purpose:**
 
-1. **COCO AP (primary)**: pycocotools `COCOeval` on `data/aquarium-v2-coco/{valid,test}.json`. This is the same evaluator and ground truth as the YOLOE/OWLv2 runs, so it is the number for cross-model tables.
+1. **COCO AP (primary)**: pycocotools `COCOeval` on `data/aquarium-v2-coco/{valid,test}.json`. This is the common evaluator and ground truth for all three benchmark models, so it is the number for cross-model tables.
 2. **Ultralytics `model.val()`**: P, R, mAP50, mAP50-95 as YOLO papers and docs report them. Its AP integration differs slightly from COCOeval, so expect differences of about one point. A large gap means something is wrong.
 
 **Test-label policy.** The original test labels contain two zero-area `shark` boxes (`DATA.md`). Ultralytics does *not* drop them, so they would count as guaranteed misses. `prepare` builds a derived YOLO view (`data/aquarium-v2-yolo/`) with hard-linked images (no extra disk). Its labels are identical except for **exactly those two records**, which is the same policy `scripts/data/yolo_to_coco.py` applies to the COCO JSON. The audit and the list of known records are imported from `scripts/data/`, not copied, and anything unexpected aborts the run. The original export is never modified, and Ultralytics' label caches are written into the derived view.

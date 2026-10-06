@@ -146,7 +146,7 @@ def compare(include_custom: bool = False) -> Path:
     if warnings:
         lines += ["> **Warnings**", ">"] + [f"> - {w}" for w in warnings] + [""]
     lines += ["## Accuracy, size and speed", "",
-              "AP = pycocotools COCO AP on the derived COCO ground truth (×100; same evaluator as the YOLOE/OWLv2 runs). "
+              "AP = pycocotools COCO AP on the derived COCO ground truth (×100; shared evaluator for the three closed-set models). "
               "Mean ± std over seeds when more than one seed exists. Latency: batch 1, 640 px, warmed-up GPU, "
               "images pre-loaded in memory. Bold = best per column.", ""]
     lines += table(["Model", "Seeds"] + [m[0] for m in METRICS], rows) + [""]

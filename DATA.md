@@ -1,4 +1,4 @@
-# Dataset: Roboflow 100 Aquarium (primary candidate)
+# Dataset: Roboflow 100 Aquarium v2 (YOLO benchmark)
 
 ## Source and version
 
@@ -17,31 +17,19 @@
 | Test | 63 |
 | **Total** | **638** |
 
-These are the splits of the published version 2; **do not re-split or use the test split for prompt/threshold tuning**. Roboflow lists the split as approximately 70% / 20% / 10%. The [RF100 benchmark's dataset statistics](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/datasets_stats.csv) independently list 448 train, 127 valid, 63 test, 638 total and 7 classes for `aquarium-qlnqy`.
+These are the splits of the published version 2; **do not re-split or use the test split for model selection or threshold tuning**. Roboflow lists the split as approximately 70% / 20% / 10%. The [RF100 benchmark's dataset statistics](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/datasets_stats.csv) independently list 448 train, 127 valid, 63 test, 638 total and 7 classes for `aquarium-qlnqy`.
 
-## Classes and prompt planning
+## Classes
 
-The seven names below match the [RF100 benchmark class-name metadata for `aquarium-qlnqy`](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/labels_names.json). Descriptions are **proposed experiment prompts**, not official annotation text or claims about every image. Inspect sample images before freezing them; do not imply a specific species, color, or pose not labeled in the dataset.
-
-| Dataset class / bare-name prompt | Honest alternative name | Short visual-description prompt |
-|---|---|---|
-| `fish` | no reliable synonym | `swimming animal with fins and a tail` |
-| `shark` | no reliable synonym | `large fish with a dorsal fin and pointed snout` |
-| `starfish` | `sea star` | `star-shaped sea animal with radiating arms` |
-| `jellyfish` | `sea jelly` | `translucent sea animal with a bell and trailing tentacles` |
-| `penguin` | no reliable synonym | `black-and-white swimming bird with flippers` |
-| `stingray` | no reliable synonym | `flat sea animal with broad wing-like fins and a long tail` |
-| `puffin` | no reliable synonym | `seabird with a large colorful beak` |
-
-**Experiment rule:** An alternative is only a true synonym if it denotes the same class; `ray` is broader than `stingray`, and `bird` is broader than `puffin`, so neither is listed as a synonym. Do not invent synonyms for the other five classes. Compare name-versus-description across all seven classes; compare honest synonym effects **only for classes with a reliable alternative**, marking the rest as not applicable rather than replacing them with a different concept. If a full seven-class prompt list is required for a synonym-variant run, leave those five prompts unchanged and disclose that only two classes were changed. Map every variant to the **same category ID** as its bare name. Confirm actual category IDs from the downloaded COCO annotations; do not assume alphabetical order.
+The seven classes in the [RF100 benchmark metadata](https://github.com/roboflow/roboflow-100-benchmark/blob/main/metadata/labels_names.json) are **fish, jellyfish, penguin, puffin, shark, starfish, stingray**. The export's YOLO IDs are 0–6 in that order; derived COCO IDs are 1–7. All three closed-set detectors train and evaluate on this same mapping. See the audited export mapping below.
 
 ## Annotations and available exports
 
-The [version-2 download page](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download) lists **COCO JSON** (recommended here), multiple **YOLO TXT + YAML** variants (e.g., YOLOv5, YOLOv7, YOLOv8, YOLOv9, YOLOv11, YOLOv12 and YOLO26), **Pascal VOC XML**, **YOLO Darknet TXT**, **TFRecord**, **PaliGemma JSONL**, and **CreateML JSON** among its popular formats. These are *available export formats*, not a claim that all have been downloaded or checked locally. The version-2 page states **no preprocessing and no augmentations** were applied when this version was generated. Model-specific resizing/normalization must be documented separately when implemented.
+The [version-2 download page](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download) lists **COCO JSON** (also available; the benchmark derives COCO ground truth from its audited YOLO export), multiple **YOLO TXT + YAML** variants (e.g., YOLOv5, YOLOv7, YOLOv8, YOLOv9, YOLOv11, YOLOv12 and YOLO26), **Pascal VOC XML**, **YOLO Darknet TXT**, **TFRecord**, **PaliGemma JSONL**, and **CreateML JSON** among its popular formats. These are *available export formats*, not a claim that all have been downloaded or checked locally. The version-2 page states **no preprocessing and no augmentations** were applied when this version was generated. Model-specific resizing/normalization must be documented separately when implemented.
 
-## Reproducible YOLO export and local audit (pending access)
+## Reproducible YOLO export and local audit
 
-**Chosen annotation export:** version 2, YOLOv8 format (YOLO TXT labels, `data.yaml`); this is **not** the detector model (the guide plans YOLOE-26s). [Official version-2 YOLOv8 download](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8). `scripts/data/prepare_data.py` downloads this exact workspace/project/version/format into `data/aquarium-qlnqy-v2-yolov8/` by default, or audits an existing export **in place** via `--source`, without re-splitting, moving, or editing dataset files. A COCO JSON export is separately available for later evaluation, but is not what this audit script downloads.
+**Chosen annotation export:** version 2, YOLOv8 format (YOLO TXT labels, `data.yaml`); this is an annotation format usable by all three detectors (YOLOv8n, YOLO11n, YOLOv10n). [Official version-2 YOLOv8 download](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2/download/yolov8). `scripts/data/prepare_data.py` downloads this exact workspace/project/version/format into `data/aquarium-qlnqy-v2-yolov8/` by default, or audits an existing export **in place** via `--source`, without re-splitting, moving, or editing dataset files. A COCO JSON export is separately available for later evaluation, but is not what this audit script downloads.
 
 ```bash
 python -m pip install roboflow PyYAML
@@ -61,7 +49,7 @@ Run on the original export at `data/aquarium.v2-release.yolov8/` with:
 python scripts/data/prepare_data.py --source data/aquarium.v2-release.yolov8 --report data/aquarium-v2-audit.json
 ```
 
-The export's `data.yaml` declares `train: ../train/images`, **`val: ../valid/images`**, `test: ../test/images`, `nc: 7`, and Roboflow metadata `workspace: roboflow-100`, `project: aquarium-qlnqy`, `version: 2`, `license: CC BY 4.0`. Actual ID mapping is **0 fish; 1 jellyfish; 2 penguin; 3 puffin; 4 shark; 5 starfish; 6 stingray**. This is *not* the order in the prompt table above.
+The export's `data.yaml` declares `train: ../train/images`, **`val: ../valid/images`**, `test: ../test/images`, `nc: 7`, and Roboflow metadata `workspace: roboflow-100`, `project: aquarium-qlnqy`, `version: 2`, `license: CC BY 4.0`. Actual ID mapping is **0 fish; 1 jellyfish; 2 penguin; 3 puffin; 4 shark; 5 starfish; 6 stingray**. This is the same order used for each benchmark model.
 
 | Original directory | Images | Labels | Missing pairs | Empty label files | Invalid annotations |
 |---|---:|---:|---:|---:|---:|
@@ -82,7 +70,7 @@ Two **class 4 (`shark`) test labels** contain zero-width, zero-height boxes:
 
 ### Reproducible evaluation policy (original splits unchanged)
 
-Use `scripts/data/yolo_to_coco.py` to create **derived**, auditable COCO JSON ground truth. By default it runs the strict audit and **refuses all conversion** while invalid boxes remain. For this exact export, an *explicit opt-in* `--invalid-policy omit-known-zero-boxes` keeps **all original images in their original splits** and every valid annotation, and omits **only these two identified zero-area source records** from the derived COCO JSON. It refuses any new/different invalid record or audit error; it writes a manifest listing each omission and `source_audit_passed: false`. The original YOLO files remain untouched. File names in the COCO JSON are paths relative to the original export root; category IDs are COCO 1–7 corresponding to source YOLO IDs 0–6, not the prompt-table order. Boxes are pixel `[x, y, width, height]` and area is pixel². Do not change this rule between models or prompt variants. The policy affects **test ground truth only**; compare models on the same 63 test images and derived JSON, tune on the 127-image validation split, and report the two exclusions and possible shark-AP bias. If a lecturer requires a different treatment, decide and document it **before** test evaluation, then regenerate every model's evaluation with the same treatment.
+Use `scripts/data/yolo_to_coco.py` to create **derived**, auditable COCO JSON ground truth. By default it runs the strict audit and **refuses all conversion** while invalid boxes remain. For this exact export, an *explicit opt-in* `--invalid-policy omit-known-zero-boxes` keeps **all original images in their original splits** and every valid annotation, and omits **only these two identified zero-area source records** from the derived COCO JSON. It refuses any new/different invalid record or audit error; it writes a manifest listing each omission and `source_audit_passed: false`. The original YOLO files remain untouched. File names in the COCO JSON are paths relative to the original export root; category IDs are COCO 1–7 corresponding to source YOLO IDs 0–6, matching the audited export order. Boxes are pixel `[x, y, width, height]` and area is pixel². Do not change this rule between models. The policy affects **test ground truth only**; compare models on the same 63 test images and derived JSON, tune on the 127-image validation split, and report the two exclusions and possible shark-AP bias. If a lecturer requires a different treatment, decide and document it **before** test evaluation, then regenerate every model's evaluation with the same treatment.
 
 ```bash
 python -m pip install PyYAML Pillow
@@ -93,7 +81,7 @@ python scripts/data/yolo_to_coco.py --source data/aquarium.v2-release.yolov8
 python scripts/data/yolo_to_coco.py --source data/aquarium.v2-release.yolov8 --invalid-policy omit-known-zero-boxes
 ```
 
-Conversion performed locally with this policy: **448 train images / 3328 boxes**, **127 valid images / 909 boxes**, **63 test images / 582 valid boxes**. `data/aquarium-v2-coco/conversion_manifest.json` lists the two excluded zero-area test records. **Derived COCO validation passed** using `pycocotools 2.0.11` in the local Python 3.14 environment (Windows): all three JSON files load with `COCO`, have unique image/annotation IDs, the expected seven category ID/name pairs, valid positive in-image bboxes and matching positive areas, and no orphan annotations. This validates the *derived JSON*, not the original YOLO labels: the source audit still fails due to the two omitted zero-area shark boxes. No model evaluation has been run.
+Conversion performed locally with this policy: **448 train images / 3328 boxes**, **127 valid images / 909 boxes**, **63 test images / 582 valid boxes**. `data/aquarium-v2-coco/conversion_manifest.json` lists the two excluded zero-area test records. **Derived COCO validation passed** using `pycocotools 2.0.11` in the local Python 3.14 environment (Windows): all three JSON files load with `COCO`, have unique image/annotation IDs, the expected seven category ID/name pairs, valid positive in-image bboxes and matching positive areas, and no orphan annotations. This validates the *derived JSON*, not the original YOLO labels: the source audit still fails due to the two omitted zero-area shark boxes. The YOLOv8n benchmark has since evaluated val and test on this derived ground truth; see `docs/yolo/YOLOV8N.md`. Full YOLO11n and YOLOv10n runs are pending.
 
 ```bash
 python -m pip install pycocotools
