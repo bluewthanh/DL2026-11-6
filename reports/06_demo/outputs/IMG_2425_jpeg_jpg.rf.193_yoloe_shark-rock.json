@@ -1,0 +1,26 @@
+{
+  "mode": "open-vocabulary text prompts",
+  "model": "yoloe-26s-seg.pt",
+  "prompts": [
+    "shark",
+    "rock"
+  ],
+  "image": "data/aquarium-v2-yolo/valid/images/IMG_2425_jpeg_jpg.rf.193df33c32dd4cc7ceabad6fbb2267bc.jpg",
+  "conf": 0.25,
+  "iou": 0.7,
+  "imgsz": 640,
+  "max_det": 300,
+  "agnostic_nms": false,
+  "detections": [
+    {
+      "label": "rock",
+      "score": 0.377,
+      "xyxy": [
+        253.2,
+        1876.9,
+        1020.8,
+        2048.0
+      ]
+    }
+  ]
+}

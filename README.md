@@ -18,9 +18,9 @@
 | 6 | Nguyễn Quang Minh | 23BA14195 |
 | 7 | _To be filled in_ | _To be filled in_ |
 
-**Lecturer's requirements:** detect objects using text descriptions rather than only fixed classes, and measure how object names, synonyms and descriptive prompts affect performance. The primary experiment uses text-prompted **YOLOE-26s** on Roboflow 100 Aquarium v2; [PROJECT_GUIDE.md](PROJECT_GUIDE.md) maps each requirement to the pipeline. **YOLOv8n, YOLO11n and YOLOv10n are supplementary, supervised closed-set controls**, not text-prompted models. See [DATA.md](DATA.md) for the dataset and annotation policy.
+**Lecturer's requirements:** detect objects using text descriptions rather than only fixed classes, and measure how object names, synonyms and descriptive prompts affect performance. The primary experiment uses text-prompted **YOLOE-26s** on Roboflow 100 Aquarium v2; [PROJECT_GUIDE.md](PROJECT_GUIDE.md) maps each requirement to the pipeline. **YOLOv8n is a supplementary, supervised closed-set baseline**, not a text-prompted model. See [DATA.md](DATA.md) for the dataset and annotation policy.
 
-**Recorded status:** a pretrained YOLOE-26s bare-name validation baseline and a GPU validation prompt study (name/synonym/description) are documented in [YOLOE.md](docs/open_vocab/YOLOE.md). A full CPU bare/synonym/description comparison has also been run locally; generated `results/` artifacts are ignored by Git, so independent reproduction is still needed before submission. There is no reported prompt-based test evaluation. YOLOv8n and YOLOv10n completed 100-epoch, seed-0 supervised runs ([YOLOv8n](docs/yolo/YOLOV8N.md), [YOLOv10n](docs/yolo/YOLOV10N.md)); YOLO11n has only a one-epoch smoke test. Do not compare supervised test AP against zero-shot validation AP as if they shared a protocol.
+**Recorded status:** a pretrained YOLOE-26s bare-name validation baseline and a GPU validation prompt study (name/synonym/description) are documented in [YOLOE.md](docs/open_vocab/YOLOE.md). A full CPU bare/synonym/description comparison has also been run locally; generated `results/` artifacts are ignored by Git, so independent reproduction is still needed before submission. There is no reported prompt-based test evaluation. YOLOv8n completed a 100-epoch, seed-0 supervised run ([YOLOV8N.md](docs/yolo/YOLOV8N.md)); its validation-split comparison with YOLOE, the data-efficiency study and the qualitative analysis are in [reports/README.md](reports/README.md). Do not compare supervised test AP against zero-shot validation AP as if they shared a protocol.
 
 ## Repository layout
 
@@ -29,12 +29,12 @@ DL2026-11-6/
 ├── README.md, PROJECT_GUIDE.md, DATA.md
 ├── aquadet/                  prepare, train, evaluate, benchmark, compare CLI
 ├── configs/base.yaml         shared protocol
-├── configs/models/           yolov8n.yaml, yolo11n.yaml, yolov10n.yaml
+├── configs/models/           yolov8n.yaml
 ├── docs/open_vocab/          YOLOE prompt study and recorded validation results
-├── docs/yolo/                supplementary benchmark instructions and results
+├── docs/yolo/                YOLOv8n baseline instructions and results
 ├── scripts/open_vocab/       text-prompted YOLOE runner and versioned prompts
 ├── scripts/data/             source audit and derived COCO conversion/validation
-├── reports/                  committed run summaries and leaderboard
+├── reports/                  run summaries and report results by section (see reports/README.md)
 ├── tests/                    benchmark and prompt-definition unit tests
 └── requirements-yolo.txt     pinned benchmark dependencies
 ```
@@ -55,7 +55,7 @@ python scripts/open_vocab/run_yoloe_baseline.py --source data/aquarium.v2-releas
 
 Use `--device cuda:0` for the GPU setup documented in [YOLOE.md](docs/open_vocab/YOLOE.md). Each run records its exact prompts, predicted boxes, per-class and overall COCO AP, and runtime in a **new** ignored output directory. All three sets use the same validation images and ground truth. The locally measured full-validation CPU study reports overall AP **0.13109 / 0.12771 / 0.05759** for bare/synonym/description respectively; per-class effects and the separately documented historical GPU study are in [YOLOE.md](docs/open_vocab/YOLOE.md). Generated artifacts are ignored by Git; rerun and verify before submission. The script refuses test evaluation to prevent accidental test tuning.
 
-## Supplementary closed-set YOLO benchmark
+## Supplementary closed-set YOLOv8n baseline
 
 Python 3.12 is recommended. With `uv`:
 
@@ -74,11 +74,11 @@ For the full **closed-set** setup, supported overrides, hardware/latency rules a
 
 ```bash
 python -m aquadet prepare
-python -m aquadet run --model yolo11n --smoke
-python -m aquadet run --model yolov8n      # or yolo11n / yolov10n; 100 epochs each
+python -m aquadet run --model yolov8n --smoke
+python -m aquadet run --model yolov8n      # 100 epochs
 python -m aquadet compare                  # generates reports/benchmark.{md,csv}
 ```
 
-`run` trains, scores validation and test with both Ultralytics and pycocotools, benchmarks latency, and writes `reports/runs/<run>.json`. Use validation for model selection and **do not tune on test**. YOLOv8n's recorded test COCO AP is **47.6** (AP50 **76.1**), 3.0M parameters and 4.4 ms/image batch-1 inference on an RTX 3060; see [YOLOV8N.md](docs/yolo/YOLOV8N.md) for the exact protocol and limitations. YOLOv10n results are also recorded in [YOLOV10N.md](docs/yolo/YOLOV10N.md); YOLO11n's full run remains pending.
+`run` trains, scores validation and test with both Ultralytics and pycocotools, benchmarks latency, and writes `reports/runs/<run>.json`. Use validation for model selection and **do not tune on test**. YOLOv8n's recorded test COCO AP is **47.6** (AP50 **76.1**), 3.0M parameters and 4.4 ms/image batch-1 inference on an RTX 3060; see [YOLOV8N.md](docs/yolo/YOLOV8N.md) for the exact protocol and limitations.
 
-The source audit flags two zero-area test shark annotations; `prepare` omits only those records in the derived YOLO and COCO ground truth, without changing the original export. See [DATA.md](DATA.md). `reports/benchmark.md` currently contains the completed YOLOv8n and YOLOv10n runs; compare latency only on the same GPU under the same conditions.
+The source audit flags two zero-area test shark annotations; `prepare` omits only those records in the derived YOLO and COCO ground truth, without changing the original export. See [DATA.md](DATA.md). `reports/benchmark.md` contains the completed YOLOv8n run; compare latency only on the same GPU under the same conditions.

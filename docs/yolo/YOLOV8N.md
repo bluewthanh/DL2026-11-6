@@ -1,6 +1,6 @@
 # YOLOv8n — closed-set fine-tuning results
 
-**Status:** full run complete (100 epochs, seed 0); val and test evaluated once; benchmarked. Protocol, setup and team rules are in [`README.md`](README.md); this file covers YOLOv8n only. The cross-model table is generated in [`reports/benchmark.md`](../../reports/benchmark.md).
+**Status:** full run complete (100 epochs, seed 0); val and test evaluated once; benchmarked. Protocol, setup and team rules are in [`README.md`](README.md); this file covers YOLOv8n only. The summary table is generated in [`reports/benchmark.md`](../../reports/benchmark.md).
 
 | Item | Value |
 |---|---|
@@ -28,7 +28,7 @@ Outputs go to `runs/yolov8n_e100_s0/` (git-ignored). Use `--name` for a new run 
 | Ultralytics mAP50-95 / mAP50 | 46.4 / 76.9 | 47.9 / 78.5 |
 | Ultralytics P / R (test) | – | 81.5 / 72.2 |
 
-COCO AP uses pycocotools on the derived COCO ground truth, the shared evaluator for the three closed-set benchmark models. Test has 63 images and 582 boxes after omitting the two zero-area shark boxes (see `DATA.md`).
+COCO AP uses pycocotools on the derived COCO ground truth, the same ground truth and evaluator as the YOLOE validation runs. Test has 63 images and 582 boxes after omitting the two zero-area shark boxes (see `DATA.md`).
 
 | Per-class AP@[.5:.95] (×100) | fish | jellyfish | penguin | puffin | shark | starfish | stingray |
 |---|---:|---:|---:|---:|---:|---:|---:|

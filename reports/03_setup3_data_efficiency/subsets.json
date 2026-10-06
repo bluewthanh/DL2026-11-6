@@ -1,0 +1,485 @@
+{
+  "yolov8n_frac010_s0": {
+    "fraction": 0.1,
+    "seed": 0,
+    "images": 45,
+    "boxes_per_class": {
+      "fish": 168,
+      "jellyfish": 36,
+      "penguin": 17,
+      "puffin": 8,
+      "shark": 25,
+      "starfish": 7,
+      "stingray": 10
+    },
+    "images_per_class": {
+      "fish": 24,
+      "jellyfish": 4,
+      "penguin": 6,
+      "puffin": 5,
+      "shark": 11,
+      "starfish": 6,
+      "stingray": 9
+    }
+  },
+  "yolov8n_frac010_s1": {
+    "fraction": 0.1,
+    "seed": 1,
+    "images": 45,
+    "boxes_per_class": {
+      "fish": 303,
+      "jellyfish": 30,
+      "penguin": 54,
+      "puffin": 14,
+      "shark": 17,
+      "starfish": 12,
+      "stingray": 19
+    },
+    "images_per_class": {
+      "fish": 23,
+      "jellyfish": 4,
+      "penguin": 8,
+      "puffin": 2,
+      "shark": 8,
+      "starfish": 6,
+      "stingray": 12
+    }
+  },
+  "yolov8n_frac010_s2": {
+    "fraction": 0.1,
+    "seed": 2,
+    "images": 45,
+    "boxes_per_class": {
+      "fish": 153,
+      "jellyfish": 27,
+      "penguin": 39,
+      "puffin": 23,
+      "shark": 18,
+      "starfish": 14,
+      "stingray": 12
+    },
+    "images_per_class": {
+      "fish": 22,
+      "jellyfish": 4,
+      "penguin": 6,
+      "puffin": 5,
+      "shark": 11,
+      "starfish": 4,
+      "stingray": 7
+    }
+  },
+  "yolov8n_frac025_s0": {
+    "fraction": 0.25,
+    "seed": 0,
+    "images": 112,
+    "boxes_per_class": {
+      "fish": 465,
+      "jellyfish": 174,
+      "penguin": 65,
+      "puffin": 24,
+      "shark": 65,
+      "starfish": 15,
+      "stingray": 30
+    },
+    "images_per_class": {
+      "fish": 60,
+      "jellyfish": 13,
+      "penguin": 12,
+      "puffin": 10,
+      "shark": 29,
+      "starfish": 7,
+      "stingray": 26
+    }
+  },
+  "yolov8n_frac025_s1": {
+    "fraction": 0.25,
+    "seed": 1,
+    "images": 112,
+    "boxes_per_class": {
+      "fish": 676,
+      "jellyfish": 90,
+      "penguin": 60,
+      "puffin": 33,
+      "shark": 63,
+      "starfish": 34,
+      "stingray": 34
+    },
+    "images_per_class": {
+      "fish": 64,
+      "jellyfish": 9,
+      "penguin": 10,
+      "puffin": 5,
+      "shark": 33,
+      "starfish": 14,
+      "stingray": 24
+    }
+  },
+  "yolov8n_frac025_s2": {
+    "fraction": 0.25,
+    "seed": 2,
+    "images": 112,
+    "boxes_per_class": {
+      "fish": 488,
+      "jellyfish": 64,
+      "penguin": 86,
+      "puffin": 40,
+      "shark": 77,
+      "starfish": 27,
+      "stingray": 38
+    },
+    "images_per_class": {
+      "fish": 61,
+      "jellyfish": 8,
+      "penguin": 13,
+      "puffin": 10,
+      "shark": 37,
+      "starfish": 10,
+      "stingray": 21
+    }
+  },
+  "yolov8n_frac050_s0": {
+    "fraction": 0.5,
+    "seed": 0,
+    "images": 224,
+    "boxes_per_class": {
+      "fish": 934,
+      "jellyfish": 228,
+      "penguin": 122,
+      "puffin": 70,
+      "shark": 128,
+      "starfish": 29,
+      "stingray": 66
+    },
+    "images_per_class": {
+      "fish": 128,
+      "jellyfish": 19,
+      "penguin": 19,
+      "puffin": 20,
+      "shark": 68,
+      "starfish": 15,
+      "stingray": 50
+    }
+  },
+  "yolov8n_frac050_s1": {
+    "fraction": 0.5,
+    "seed": 1,
+    "images": 224,
+    "boxes_per_class": {
+      "fish": 1135,
+      "jellyfish": 162,
+      "penguin": 176,
+      "puffin": 84,
+      "shark": 135,
+      "starfish": 51,
+      "stingray": 63
+    },
+    "images_per_class": {
+      "fish": 115,
+      "jellyfish": 16,
+      "penguin": 27,
+      "puffin": 19,
+      "shark": 67,
+      "starfish": 25,
+      "stingray": 43
+    }
+  },
+  "yolov8n_frac050_s2": {
+    "fraction": 0.5,
+    "seed": 2,
+    "images": 224,
+    "boxes_per_class": {
+      "fish": 1037,
+      "jellyfish": 126,
+      "penguin": 180,
+      "puffin": 85,
+      "shark": 144,
+      "starfish": 43,
+      "stingray": 71
+    },
+    "images_per_class": {
+      "fish": 127,
+      "jellyfish": 12,
+      "penguin": 27,
+      "puffin": 21,
+      "shark": 73,
+      "starfish": 17,
+      "stingray": 43
+    }
+  },
+  "yolov8n_e100_s0": {
+    "fraction": 1.0,
+    "seed": 0,
+    "images": 448,
+    "boxes_per_class": {
+      "fish": 1965,
+      "jellyfish": 385,
+      "penguin": 330,
+      "puffin": 175,
+      "shark": 259,
+      "starfish": 78,
+      "stingray": 136
+    },
+    "images_per_class": {
+      "fish": 241,
+      "jellyfish": 32,
+      "penguin": 47,
+      "puffin": 45,
+      "shark": 134,
+      "starfish": 37,
+      "stingray": 91
+    }
+  },
+  "yolov8n_frac100_s1": {
+    "fraction": 1.0,
+    "seed": 1,
+    "images": 448,
+    "boxes_per_class": {
+      "fish": 1965,
+      "jellyfish": 385,
+      "penguin": 330,
+      "puffin": 175,
+      "shark": 259,
+      "starfish": 78,
+      "stingray": 136
+    },
+    "images_per_class": {
+      "fish": 241,
+      "jellyfish": 32,
+      "penguin": 47,
+      "puffin": 45,
+      "shark": 134,
+      "starfish": 37,
+      "stingray": 91
+    }
+  },
+  "yolov8n_frac100_s2": {
+    "fraction": 1.0,
+    "seed": 2,
+    "images": 448,
+    "boxes_per_class": {
+      "fish": 1965,
+      "jellyfish": 385,
+      "penguin": 330,
+      "puffin": 175,
+      "shark": 259,
+      "starfish": 78,
+      "stingray": 136
+    },
+    "images_per_class": {
+      "fish": 241,
+      "jellyfish": 32,
+      "penguin": 47,
+      "puffin": 45,
+      "shark": 134,
+      "starfish": 37,
+      "stingray": 91
+    }
+  },
+  "yolov8n_frac001_s0": {
+    "fraction": 0.01,
+    "seed": 0,
+    "images": 4,
+    "boxes_per_class": {
+      "fish": 33,
+      "jellyfish": 0,
+      "penguin": 0,
+      "puffin": 0,
+      "shark": 2,
+      "starfish": 0,
+      "stingray": 3
+    },
+    "images_per_class": {
+      "fish": 3,
+      "jellyfish": 0,
+      "penguin": 0,
+      "puffin": 0,
+      "shark": 2,
+      "starfish": 0,
+      "stingray": 3
+    }
+  },
+  "yolov8n_frac001_s1": {
+    "fraction": 0.01,
+    "seed": 1,
+    "images": 4,
+    "boxes_per_class": {
+      "fish": 0,
+      "jellyfish": 15,
+      "penguin": 26,
+      "puffin": 0,
+      "shark": 0,
+      "starfish": 0,
+      "stingray": 0
+    },
+    "images_per_class": {
+      "fish": 0,
+      "jellyfish": 2,
+      "penguin": 2,
+      "puffin": 0,
+      "shark": 0,
+      "starfish": 0,
+      "stingray": 0
+    }
+  },
+  "yolov8n_frac001_s2": {
+    "fraction": 0.01,
+    "seed": 2,
+    "images": 4,
+    "boxes_per_class": {
+      "fish": 23,
+      "jellyfish": 7,
+      "penguin": 0,
+      "puffin": 0,
+      "shark": 0,
+      "starfish": 0,
+      "stingray": 1
+    },
+    "images_per_class": {
+      "fish": 3,
+      "jellyfish": 1,
+      "penguin": 0,
+      "puffin": 0,
+      "shark": 0,
+      "starfish": 0,
+      "stingray": 1
+    }
+  },
+  "yolov8n_frac002p5_s0": {
+    "fraction": 0.025,
+    "seed": 0,
+    "images": 11,
+    "boxes_per_class": {
+      "fish": 44,
+      "jellyfish": 8,
+      "penguin": 2,
+      "puffin": 1,
+      "shark": 2,
+      "starfish": 2,
+      "stingray": 3
+    },
+    "images_per_class": {
+      "fish": 6,
+      "jellyfish": 1,
+      "penguin": 1,
+      "puffin": 1,
+      "shark": 2,
+      "starfish": 2,
+      "stingray": 3
+    }
+  },
+  "yolov8n_frac002p5_s1": {
+    "fraction": 0.025,
+    "seed": 1,
+    "images": 11,
+    "boxes_per_class": {
+      "fish": 104,
+      "jellyfish": 15,
+      "penguin": 26,
+      "puffin": 0,
+      "shark": 1,
+      "starfish": 5,
+      "stingray": 3
+    },
+    "images_per_class": {
+      "fish": 6,
+      "jellyfish": 2,
+      "penguin": 2,
+      "puffin": 0,
+      "shark": 1,
+      "starfish": 1,
+      "stingray": 2
+    }
+  },
+  "yolov8n_frac002p5_s2": {
+    "fraction": 0.025,
+    "seed": 2,
+    "images": 11,
+    "boxes_per_class": {
+      "fish": 50,
+      "jellyfish": 7,
+      "penguin": 16,
+      "puffin": 0,
+      "shark": 5,
+      "starfish": 0,
+      "stingray": 2
+    },
+    "images_per_class": {
+      "fish": 7,
+      "jellyfish": 1,
+      "penguin": 2,
+      "puffin": 0,
+      "shark": 2,
+      "starfish": 0,
+      "stingray": 2
+    }
+  },
+  "yolov8n_frac005_s0": {
+    "fraction": 0.05,
+    "seed": 0,
+    "images": 22,
+    "boxes_per_class": {
+      "fish": 88,
+      "jellyfish": 8,
+      "penguin": 14,
+      "puffin": 2,
+      "shark": 8,
+      "starfish": 2,
+      "stingray": 5
+    },
+    "images_per_class": {
+      "fish": 13,
+      "jellyfish": 1,
+      "penguin": 4,
+      "puffin": 2,
+      "shark": 4,
+      "starfish": 2,
+      "stingray": 5
+    }
+  },
+  "yolov8n_frac005_s1": {
+    "fraction": 0.05,
+    "seed": 1,
+    "images": 22,
+    "boxes_per_class": {
+      "fish": 177,
+      "jellyfish": 23,
+      "penguin": 26,
+      "puffin": 0,
+      "shark": 3,
+      "starfish": 7,
+      "stingray": 8
+    },
+    "images_per_class": {
+      "fish": 14,
+      "jellyfish": 3,
+      "penguin": 2,
+      "puffin": 0,
+      "shark": 3,
+      "starfish": 3,
+      "stingray": 5
+    }
+  },
+  "yolov8n_frac005_s2": {
+    "fraction": 0.05,
+    "seed": 2,
+    "images": 22,
+    "boxes_per_class": {
+      "fish": 69,
+      "jellyfish": 16,
+      "penguin": 24,
+      "puffin": 17,
+      "shark": 7,
+      "starfish": 5,
+      "stingray": 4
+    },
+    "images_per_class": {
+      "fish": 11,
+      "jellyfish": 2,
+      "penguin": 3,
+      "puffin": 3,
+      "shark": 4,
+      "starfish": 1,
+      "stingray": 3
+    }
+  }
+}

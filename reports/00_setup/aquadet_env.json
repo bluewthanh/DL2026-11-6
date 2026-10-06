@@ -1,0 +1,18 @@
+{
+  "python": "3.12.12",
+  "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "cudnn": 92400,
+  "ultralytics": "8.4.173",
+  "device": "NVIDIA GeForce RTX 3060",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3060",
+    "driver": "580.173.02",
+    "memory_used_mib": 6969,
+    "memory_total_mib": 12288,
+    "utilization_pct": 0
+  }
+}
+models: yolov8n

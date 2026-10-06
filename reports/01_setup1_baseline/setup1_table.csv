@@ -1,0 +1,6 @@
+model,regime,train_images,AP,AP50,AP75,APs,APm,APl,AR1,AR10,AR100,detections,source
+YOLOv8n last.pt,supervised fine-tuning (COCO-pretrained),448,0.44411,0.74837,0.44872,0.03579,0.20836,0.47566,0.20901,0.46695,0.57348,14136,reports/03_setup3_data_efficiency/eval/yolov8n_e100_s0/last/coco_predictions_valid.json.gz
+YOLOv8n best.pt (val-selected),supervised fine-tuning (COCO-pretrained),448,0.45372,0.75835,0.4603,0.03366,0.20177,0.48507,0.22086,0.47407,0.5794,15329,reports/03_setup3_data_efficiency/eval/yolov8n_e100_s0/best/coco_predictions_valid.json.gz
+YOLOE-26s bare names,zero-shot text prompts,0,0.13108,0.22976,0.11843,0.01013,0.06196,0.14726,0.11679,0.27459,0.35752,16563,reports/02_setup2_prompt_study/runs/bare/predictions.json.gz
+YOLOE-26s synonym set,zero-shot text prompts,0,0.12772,0.21203,0.12082,0.00963,0.03472,0.14323,0.13798,0.27913,0.34419,15777,reports/02_setup2_prompt_study/runs/synonym/predictions.json.gz
+YOLOE-26s descriptions,zero-shot text prompts,0,0.05766,0.08314,0.05643,0.0,0.02738,0.06034,0.10264,0.21127,0.26897,19861,reports/02_setup2_prompt_study/runs/description/predictions.json.gz

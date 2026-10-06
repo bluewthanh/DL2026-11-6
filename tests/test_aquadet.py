@@ -17,7 +17,7 @@ class ConfigTests(unittest.TestCase):
     def test_every_model_config_loads_with_identical_protocol(self):
         hashes = {cfg.load(m)["protocol_hash"] for m in cfg.available_models()}
         self.assertEqual(len(hashes), 1, "model files must not change the shared protocol")
-        self.assertTrue({"yolov8n", "yolo11n", "yolov10n"} <= set(cfg.available_models()))
+        self.assertIn("yolov8n", cfg.available_models())
 
     def test_seed_does_not_change_protocol_but_epochs_do(self):
         base = cfg.load("yolov8n")
@@ -31,9 +31,9 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(cfg.default_run_name(seeded), "yolov8n_e100_s3")
 
     def test_smoke_is_named_and_flagged(self):
-        smoke = cfg.load("yolo11n", smoke=True)
+        smoke = cfg.load("yolov8n", smoke=True)
         self.assertEqual(smoke["train"]["epochs"], 1)
-        self.assertEqual(cfg.default_run_name(smoke), "yolo11n_e1_s0_smoke")
+        self.assertEqual(cfg.default_run_name(smoke), "yolov8n_e1_s0_smoke")
 
     def test_override_parsing_and_validation(self):
         self.assertEqual(cfg.parse_override("train.lr0=0.01"), ("train.lr0", 0.01))
@@ -108,14 +108,14 @@ class CompareTests(unittest.TestCase):
 
     def test_seeds_are_aggregated_and_best_is_bold(self):
         text = self.run_compare([fake_summary("yolov8n", 0, 0.40), fake_summary("yolov8n", 1, 0.50),
-                                 fake_summary("yolo11n", 0, 0.30)])
+                                 fake_summary("model_b", 0, 0.30)])
         self.assertIn("| yolov8n | 2 |", text)
         self.assertIn("**45.0 ± 7.1**", text)
         self.assertNotIn("Warnings", text)
 
     def test_mixed_devices_and_protocols_warn(self):
         text = self.run_compare([fake_summary("yolov8n", 0, 0.4, device="GPU A", protocol="p1"),
-                                 fake_summary("yolo11n", 0, 0.4, device="GPU B", protocol="p2")])
+                                 fake_summary("model_b", 0, 0.4, device="GPU B", protocol="p2")])
         self.assertIn("different devices", text)
         self.assertIn("different protocols", text)
 

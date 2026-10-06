@@ -1,0 +1,4 @@
+PASS data/aquarium-v2-coco/train.json: 448 images, 3328 annotations
+PASS data/aquarium-v2-coco/valid.json: 127 images, 909 annotations
+PASS data/aquarium-v2-coco/test.json: 63 images, 582 annotations
+TOTAL: 638 images, 4819 annotations; all COCO checks passed

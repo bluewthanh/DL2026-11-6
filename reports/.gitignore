@@ -1,0 +1,6 @@
+# Raw (uncompressed) predictions written when `scripts/yolo/data_efficiency.py evaluate` is re-run.
+# The committed copies are the gzip-compressed coco_predictions_valid.json.gz next to them.
+03_setup3_data_efficiency/eval/**/coco_predictions_*.json
+
+# Raw training console logs (progress bars, local paths); kept locally only.
+03_setup3_data_efficiency/train*.log

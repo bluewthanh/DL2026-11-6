@@ -1,6 +1,6 @@
 """Score a checkpoint with Ultralytics `model.val()` and with pycocotools.
 
-COCOeval on the derived COCO JSON is the primary metric for all three benchmark models.
+COCOeval on the derived COCO JSON is the primary metric (same ground truth and evaluator as the YOLOE runs).
 """
 
 import contextlib

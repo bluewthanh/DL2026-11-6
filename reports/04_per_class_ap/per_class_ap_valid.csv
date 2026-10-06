@@ -1,0 +1,36 @@
+model,class,gt_boxes,AP,AP50
+YOLOv8n last.pt,fish,459,0.43453,0.78469
+YOLOv8n last.pt,jellyfish,155,0.51873,0.92358
+YOLOv8n last.pt,penguin,104,0.30548,0.67145
+YOLOv8n last.pt,puffin,74,0.25046,0.54936
+YOLOv8n last.pt,shark,57,0.44742,0.67898
+YOLOv8n last.pt,starfish,27,0.55346,0.78981
+YOLOv8n last.pt,stingray,33,0.59871,0.84075
+YOLOv8n best.pt (val-selected),fish,459,0.43828,0.78465
+YOLOv8n best.pt (val-selected),jellyfish,155,0.53461,0.93573
+YOLOv8n best.pt (val-selected),penguin,104,0.31204,0.70382
+YOLOv8n best.pt (val-selected),puffin,74,0.24884,0.53721
+YOLOv8n best.pt (val-selected),shark,57,0.48472,0.72081
+YOLOv8n best.pt (val-selected),starfish,27,0.55306,0.81018
+YOLOv8n best.pt (val-selected),stingray,33,0.60453,0.81606
+YOLOE-26s bare names,fish,459,0.19592,0.38778
+YOLOE-26s bare names,jellyfish,155,0.12843,0.26252
+YOLOE-26s bare names,penguin,104,0.11195,0.2625
+YOLOE-26s bare names,puffin,74,0.06216,0.10866
+YOLOE-26s bare names,shark,57,0.05412,0.06693
+YOLOE-26s bare names,starfish,27,0.1775,0.27216
+YOLOE-26s bare names,stingray,33,0.18749,0.24775
+YOLOE-26s synonym set,fish,459,0.19818,0.38823
+YOLOE-26s synonym set,jellyfish,155,0.02977,0.07128
+YOLOE-26s synonym set,penguin,104,0.11227,0.26329
+YOLOE-26s synonym set,puffin,74,0.06088,0.10663
+YOLOE-26s synonym set,shark,57,0.05412,0.06693
+YOLOE-26s synonym set,starfish,27,0.2542,0.34413
+YOLOE-26s synonym set,stingray,33,0.1846,0.24369
+YOLOE-26s descriptions,fish,459,0.01615,0.03309
+YOLOE-26s descriptions,jellyfish,155,0.03062,0.06725
+YOLOE-26s descriptions,penguin,104,0.03318,0.06266
+YOLOE-26s descriptions,puffin,74,0.00085,0.00141
+YOLOE-26s descriptions,shark,57,0.0252,0.04822
+YOLOE-26s descriptions,starfish,27,0.27209,0.3276
+YOLOE-26s descriptions,stingray,33,0.02552,0.04174
