@@ -48,7 +48,7 @@ Every data file in these folders is described in its section's README, together 
   - Every YOLOv8n checkpoint, validation split: `03_setup3_data_efficiency/eval/*/*/coco_predictions_valid.json.gz`.
   - Main YOLOv8n run, test split: `01_setup1_baseline/yolov8n_e100_s0_aquadet/coco_predictions_test.json.gz`.
 - **All metrics, configs and training curves** for every run: see each section's README. Every table, plot and overlay here can be rebuilt from these files alone.
-- **Not stored:** trained weights (`.pt`, which `PROJECT_GUIDE.md` asks not to commit), dataset images and labels, and Ultralytics' batch preview images. These stay in the Git-ignored `runs/`, `results/` and `data/` folders on the machine that ran them.
+- **Not stored:** trained weights (`.pt`), source dataset images/labels, and Ultralytics' batch preview images. Trained weights stay in the Git-ignored `runs/` folder; the source export and generated local views stay in `data/` or `dataset/`. See `README.md` and `DATA.md` for downloads and reproduction.
 - **Kept local only:** the raw training console logs. Absolute paths of the machine that ran the experiments were replaced by repo-relative paths in the stored copies; the values are unchanged.
 
 The overlay and demo figures show images from [Roboflow 100 Aquarium v2](https://universe.roboflow.com/roboflow-100/aquarium-qlnqy/dataset/2) (`aquarium-qlnqy`), licensed CC BY 4.0 (see `DATA.md`). Credit the dataset when reusing them.

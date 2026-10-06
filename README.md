@@ -18,7 +18,7 @@
 | 6 | Nguyễn Quang Minh | 23BA14195 |
 | 7 | Trần Khoa Nam | 2410702 |
 
-**Lecturer's requirements:** detect objects using text descriptions rather than only fixed classes, and measure how object names, synonyms and descriptive prompts affect performance. The primary experiment uses text-prompted **YOLOE-26s** on Roboflow 100 Aquarium v2; [PROJECT_GUIDE.md](PROJECT_GUIDE.md) maps each requirement to the pipeline. **YOLOv8n is a supplementary, supervised closed-set baseline**, not a text-prompted model. See [DATA.md](DATA.md) for the dataset and annotation policy.
+**Topic:** detect objects using text descriptions rather than only fixed classes, and measure how names, synonyms and descriptive prompts affect detection. The primary experiment uses text-prompted **YOLOE-26s** on Roboflow 100 Aquarium v2. **YOLOv8n is a supervised closed-set baseline**, not a text-prompted model. See [DATA.md](DATA.md) for dataset provenance and [reports/README.md](reports/README.md) for the three experiments and saved results.
 
 **Recorded status:** the saved GPU validation prompt-study runs and predictions are in [reports/02_setup2_prompt_study/](reports/02_setup2_prompt_study/); a second member checked saved artifacts in [reports/VERIFICATION.md](reports/VERIFICATION.md), but did not independently rerun model inference. A separate local CPU study is in [YOLOE.md](docs/open_vocab/YOLOE.md). There is no reported prompt-based test evaluation. YOLOv8n completed supervised runs; its same-validation-split comparison with YOLOE, the data-efficiency study and qualitative analysis are in [reports/README.md](reports/README.md). Do not compare supervised test AP against zero-shot validation AP as if they shared a protocol.
 
@@ -26,7 +26,7 @@
 
 ```text
 DL2026-11-6/
-├── README.md, PROJECT_GUIDE.md, DATA.md
+├── README.md, DATA.md
 ├── aquadet/                  prepare, train, evaluate, benchmark, compare CLI
 ├── configs/base.yaml         shared protocol
 ├── configs/models/           yolov8n.yaml
