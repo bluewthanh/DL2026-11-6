@@ -19,7 +19,7 @@ Each model is shown at its own best score threshold (YOLOv8n 0.45; YOLOE 0.10, o
 
 **1. Sharks are called "fish".** YOLOE gets only 3 of the 57 sharks right, and it labels 41 sharks as `fish`. Sharks are not small, and YOLOv8n handles them well (44.7 AP with `last.pt`). The problem is the name: a shark is also a kind of fish, so the word `fish` wins. (Figure 8.1)
 
-**2. Small birds in groups.** Puffins and penguins are the smallest objects, and both models score worst on them. In one image with 11 puffins behind wet glass, YOLOE finds none and YOLOv8n finds 5. (Figure 8.3)
+**2. Small birds in groups.** Puffins and penguins are the smallest objects. They are YOLOv8n's two weakest classes (25.0 and 30.5 AP with `last.pt`), and puffin is YOLOE's second weakest class after shark (6.2 AP). In one image with 11 puffins behind wet glass, YOLOE finds none and YOLOv8n finds 5. (Figure 8.3)
 
 **3. One word can help or hurt one class.**
 - Changing `jellyfish` to `sea jelly` makes YOLOE call real jellyfish `fish`: this mistake goes from 35 to 56 cases, and jellyfish AP drops by 9.9.
