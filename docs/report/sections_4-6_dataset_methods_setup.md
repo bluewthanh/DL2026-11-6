@@ -14,7 +14,7 @@ We use **Roboflow 100 Aquarium, version 2** (CC BY 4.0, https://universe.roboflo
 
 **Preparation.** We kept the original splits. Our scripts check the labels, convert them to COCO format and check the result again (`scripts/data/`).
 
-**Problems we found.** Two shark boxes in the test set have zero size. We removed these two boxes only from our converted test labels; the original files are unchanged (see `DATA.md`). This may slightly change the shark score on test. This does not affect any validation result.
+**Problems we found.** Two shark boxes in the test set have zero size. We removed these two boxes only from our converted test labels; the original files are unchanged (see `DATA.md`). This may slightly change the shark score on test, but not any validation result.
 
 **What makes this dataset hard** (`scripts/analysis/gt_stats.py`):
 - **Imbalance:** half of the validation boxes are fish, but there are only 27 starfish and 33 stingrays.
