@@ -48,12 +48,12 @@ The two final-gate members write the remaining sections, integrate the assigned 
 
 ### Section-by-section writing and integration (tick in the external document)
 
-A consolidated **repository draft of Sections 3–9** is available in [`docs/report/sections_3-9_draft.md`](docs/report/sections_3-9_draft.md). It adapts the earlier draft of §§4–6 and 8 and adds draft §§3, 7 and 9. These repository drafts are **not evidence of integration or approval in the external PDF**; owners and PDF statuses remain to be confirmed by the two writers.
+Temporary **repository drafts of Sections 1–2** are in [`docs/report/sections_1-2_draft.md`](docs/report/sections_1-2_draft.md); a consolidated draft of **Sections 3–9** is in [`docs/report/sections_3-9_draft.md`](docs/report/sections_3-9_draft.md). The latter adapts the earlier draft of §§4–6 and 8 and adds draft §§3, 7 and 9. These drafts are **not evidence of integration or approval in the external PDF**; owners and PDF statuses remain to be confirmed by the two writers.
 
 | Status | Section | Owner (fill in) | Deliverable / acceptance check |
 |---|---|---|---|
-| `[ ]` | **1. Abstract** | ____ | Write **150–200 words**, preferably after the results/conclusion: problem, text-prompted YOLOE vs supervised YOLOv8n, 127-image validation protocol, key numeric results (AP on a stated scale), wording effects, takeaway and limitation. Do not imply held-out YOLOE test results. |
-| `[ ]` | **2. Introduction & Research Questions** | ____ | **0.5–1 page**: motivation for open-vocabulary detection vs fixed-class models; explicit questions on (a) text-based detection and comparison and (b) effect of names/synonyms/descriptions; state the contribution and scope (Aquarium v2, validation). |
+| `[~]` | **1. Abstract** | ____ | Temporary **191-word** repository draft in [`sections_1-2_draft.md`](docs/report/sections_1-2_draft.md). Review against the final results/conclusion, then place in the external PDF; required length **150–200 words**. Do not imply held-out YOLOE test results. |
+| `[~]` | **2. Introduction & Research Questions** | ____ | Temporary repository draft in the same file: motivation, two explicit questions, scope and approach. Check **0.5–1 page** in the final layout and align questions with §§7 and 9 before placing in the external PDF. |
 | `[~]` | **3. Related Work** | ____ | Repository draft in [`sections_3-9_draft.md`](docs/report/sections_3-9_draft.md) contrasts closed-set YOLOv8, text-prompted YOLOE and CLIP; review its source leads, fit **0.5–1 page**, and check all in-text citations against the final reference list. `[~]` means draft only, not in the PDF. |
 | `[~]` | **4. Dataset & Data Preparation** | ____ | Import and review §4 of [`docs/report/sections_4-6_8.md`](docs/report/sections_4-6_8.md); cross-check [`DATA.md`](DATA.md): Aquarium v2 URL/license, class names, **448/127/63** splits, conversion/audit and two omitted zero-area **derived test** boxes. Keep the source unmodified and mention limitations. `[~]` means repository draft exists, **not** that it is in the PDF. |
 | `[~]` | **5. Methods** | ____ | Import/review §5 of the same draft: YOLOE-26s main model, YOLOv8n closed-set baseline, prompt-to-class mapping, zero-shot-on-Aquarium qualification, `last.pt` choice, comparison strategy and different training regimes. |
@@ -81,7 +81,7 @@ Use only results backed by scripts/documentation; do not claim a YOLOE held-out 
 ## 6. Priority order for the two final-gate writers
 
 1. **Assign Writer A/B and obtain the external master report**; confirm brief, official roster, filename, deadline/timezone and submission owner. Do not wait for a PDF to appear in Git.
-2. **Draft missing sections 1–2 and 10–11, review repository-drafted §§3–9**, and cross-review each other's text against `reports/` before assembling. The three setups, overlays and demo **already have repository evidence**; do not rerun them merely because older checklist boxes were stale.
+2. **Review the temporary repository drafts of §§1–2 and 3–9**, align research questions with results and conclusion, then draft §§10–11 and cross-review each other's text against `reports/` before assembling. The three setups, overlays and demo **already have repository evidence**; do not rerun them merely because older checklist boxes were stale.
 3. **Assemble, verify and approve the external PDF** using §4's joint gate; prioritize factual accuracy, page/word limits, citations and contribution table.
 4. **Finish the four slides and rehearsal**, Q&A preparation and any outstanding fresh-environment reproduction or processed-dataset link decision if the lecturer requires it. Keep YOLOv8n as the only closed-set baseline unless instructed otherwise.
 5. **Have the group leader upload and confirm receipt** before the deadline; share the confirmation and final version with the group.
