@@ -48,7 +48,7 @@ The report must be **10–15 pages excluding References and Appendix** and named
 | `[~]` | 5. Methods | Draft in the same file: YOLOE-26s main method, YOLOv8n baseline (`last.pt` as the fair row) and comparison strategy. Review, then move into the report. |
 | `[~]` | 6. Experimental Setup | Draft in the same file: shared protocol, environments, Setup 1, Setup 2 and Setup 3 (data efficiency) with reproduce commands. Review, then move into the report. |
 | `[~]` | 7. Results and Discussion | Metrics are documented, but write **interpretation**, per-class effects and comparison caveats; do not list numbers alone. |
-| `[~]` | 8. Error and Qualitative Analysis | Draft in [`docs/report/section_8_error_analysis.md`](docs/report/section_8_error_analysis.md): error breakdown, class-by-class causes and five paired figures from `reports/05_qualitative_overlays`. Review, then move into the report. |
+| `[~]` | 8. Error and Qualitative Analysis | Draft in [`docs/report/section_8_error_analysis.md`](docs/report/section_8_error_analysis.md): error breakdown, main reasons and three paired figures from `reports/05_qualitative_overlays`. Review, then move into the report. |
 | `[~]` | 9. Conclusion and Limitations | About 0.5 page; address both topic questions; discuss one dataset/model, two real synonyms, validation-only prompt study and dataset defects. |
 | `[ ]` | 10. References | Cite approximately 5–10 relevant sources, including dataset and methods. |
 | `[ ]` | 11. Appendix | **Member Contribution Table** reflecting verified work; add reproducibility details as needed. |
